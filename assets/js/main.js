@@ -4,11 +4,11 @@ var search;
 
 function startApp(){
     search= new SearchCategory({
-        search: $('#searchBox'),
-        searchButton: $('#searchButton'),
+        search: $('#searchBar'),
+        // searchButton: $('#searchButton'),
         homeButton: $('.homeButton'),
         outsideButton: $('.outsideButton'),
     });
     search.addEventHandlers();
-	search.handleGetData();
+	// search.handleGetData();
 }

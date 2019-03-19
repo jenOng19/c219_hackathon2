@@ -1,34 +1,48 @@
-class searchCategory{
+class SearchCategory{
     constructor(elements){
         this.domElements=elements;
 
-        this.handleSearchButton=this.handleSearchButton.bind(this);
+        
+        
+        
+        this.handleSearchBar=this.handleSearchBar.bind(this);
         this.handleHomeButton=this.handleHomeButton.bind(this);
         this.handleOutsideButton=this.handleOutsideButton.bind(this);
-
+        this.handleGetData=this.handleGetData.bind(this);
+        this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
 
     addEventHandlers(){
-		$('#searchButton').click(this.handleSearchButton);
+		$('#searchBar').click(this.handleSearchBar);
         $('.homeButton').click(this.handleHomeButton);
         $('.outsideButton').click(this.handleOutsideButton); 
     }
 
-    handleSearchButton(){
+    handleSearchBar(){
         var userInput=this.domElements.search.val();
-        this.getData(userInput);
+        return userInput;
     }
 
-    getData(userInput){
-        this.handleGetData;
+    handleHomeButton(){
+        var value=this.handleSearchBar();
+        this.handleGetData(value);
     }
 
-    handleGetData(){
+    handleOutsideButton(){
+        var holdValue=this.handleSearchBar();
+        this.handleGetData(holdValue);
+    }
+
+    handleGetData(value){
 		var ajaxConfig = {
-			dataType: 'json',
-			data:{"api_key": "6nNnKyzCq0u6dHU-Ycir7C1yW7IAIO_WbX8Cw62pxosdj8Se4QJlmWIFgukCxLTkS3NtVxK3wZ8kwI-6iUyOuqm4TmL44pl29hOJRhzSBw6h5aF62wsfjxt3Z0KQXHYxFDTbESioTh"},
-			method: 'get',
-			url: 'https://api.yelp.com/v3/businesses/search?location=irvine',
+            async: true,
+            crossDomain: true,
+            url: "https://danielpaschal.com/lfzproxies/yelpproxy.php?term=taco&location=irvine",
+            method: "GET",
+            headers: {
+                apikey: "6nNnKyzCq0u6dHU-Ycir7C1yW7IAIO_WbX8Cw62pxosdj8Se4QJlmWIFgukCxLTkS3NtVxK3wZ8kwI-6iUyOuqm4TmL44pl29hOJRhzSBw6h5aF62wsfjxt3Z0KQXHYx",
+                "cache-control": "no-cache",
+            },
 			success: this.handleGetDataSuccess,
 		}
 		$.ajax(ajaxConfig);
@@ -38,10 +52,8 @@ class searchCategory{
 		console.log("response:" ,response);
 		if(response.success){
 			for(var key= 0; key<response.businesses.length; key++){
-				var food=response.data[key];
-				this.createStudent(students.name, students.course, students.grade, students.id);
+				
 			}
-			this.displayAllStudents();
 		}
 	}
 }
