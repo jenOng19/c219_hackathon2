@@ -23,15 +23,15 @@ class SearchCategory{
 
     handleHomeButton(){
         var value=this.handleSearchBar();
-        // this.handleGetData(value);
         var stayHome = new StayHome(value);
-        stayHome.getDataFromMealDb();
+        stayHome.getDataByName();
+        stayHome.getDataByIngredient();
     }
 
     handleOutsideButton(){
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
-        callYelp.handleGetData
+        callYelp.handleGetData();
         // this.handleGetData(holdValue);
     }
 
