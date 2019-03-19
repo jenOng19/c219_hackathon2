@@ -1,0 +1,91 @@
+body {
+    margin:0;
+    font-family: Arial;
+    background-color: lightslategray;
+}
+
+#searchContainer{
+    height: 38vh;
+}
+
+#optionsContainer{
+    height: 62vh;
+    position: relative;
+    display: flex;
+}
+
+
+#homeContainer{
+    width: 50%;
+    height:100%;
+    position: relative;
+    display: inline-block;
+    
+}
+
+#partyOutsideContainer{
+    width: 50%;
+    height: 100%;  
+    position: relative;
+    display: inline-block;
+
+}
+
+.homeButton{
+    position:relative;
+    top:9%;
+    left:38%;
+    height:41vh;
+    background-color:white;
+    width:22vw;
+    border-radius:50%;
+    text-align: center;
+}
+
+.outsideButton{
+    position: absolute;
+    top:9%;
+    right:38%;
+    height:41vh;
+    background-color:white;
+    width:22vw;
+    border-radius:50%;
+    text-align: center;
+}
+p{
+    text-align: center;
+    margin-left: 36%;
+    margin-top: 5%;
+    position: absolute;
+    font-size: 22px;
+}
+
+#searchBox{
+    position: absolute;
+    top:16%;
+    left: 47%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid black;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+#searchButton{
+    float: right;
+    width: 4%;
+    padding: 11px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 2px solid black;
+    cursor: pointer;
+    top: 34%;
+    position: relative;
+    right: 7%;
+}
+
+
+
