@@ -73,6 +73,39 @@ p{
     background: #f1f1f1;
 }
 
+.modal{
+    height:100%;
+    width:100%;
+    font-size:1rem;
+    color: #ccedda;
+    background-color: green;
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: justify;
+    z-index: 1;
+}
+
+.hide{
+    display: none;
+}
+
+#close{
+    position:absolute;
+    top:3px;
+    right:2px;
+    width:26px;
+    height:24px;
+    background-color: rgb(29, 147, 59, 0.9);
+    border-radius:100%;
+    border: 2px solid darkgreen;
+    box-shadow: 4px 4px 4px green;
+    font-weight: bold;
+    color: #ccedda;
+    vertical-align: middle;
+}
+
 /* #searchButton{
     float: right;
     width: 4%;
