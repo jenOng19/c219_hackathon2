@@ -78,8 +78,8 @@ p{
     width:100%;
     font-size:1rem;
     color: #ccedda;
-    background-color: green;
-    position: relative;
+    background-color: lightslategray;
+    position: absolute;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -97,12 +97,12 @@ p{
     right:2px;
     width:26px;
     height:24px;
-    background-color: rgb(29, 147, 59, 0.9);
+    background-color:  #ccedda;
     border-radius:100%;
-    border: 2px solid darkgreen;
-    box-shadow: 4px 4px 4px green;
+    border: 2px solid slategray;
+    box-shadow: 4px 4px 4px slategray;
     font-weight: bold;
-    color: #ccedda;
+    color: slategray;
     vertical-align: middle;
 }
 
