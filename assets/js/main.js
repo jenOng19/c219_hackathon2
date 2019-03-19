@@ -5,10 +5,17 @@ var search;
 function startApp(){
     search= new SearchCategory({
         search: $('#searchBar'),
-        // searchButton: $('#searchButton'),
         homeButton: $('.homeButton'),
         outsideButton: $('.outsideButton'),
     });
+    $('#close').click(showHideModal);
     search.addEventHandlers();
-	// search.handleGetData();
+	
 }
+
+
+function showHideModal(){
+    $('.modal').toggleClass('hide');
+    $("#searchBar").val("");
+}
+
