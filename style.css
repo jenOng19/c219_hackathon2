@@ -87,5 +87,54 @@ p{
     right: 7%;
 }
 
+/* selectionPage */
+.choiceHeaderContainer{
+    height:5vh;
+    background-color: rgb(240, 120, 120);
+    text-align: center;
+}
 
+.choiceBody{
+    height: 95vh;
+    background-color: rgb(107, 107, 255);
+    font-size:0;
+    position: relative;
+}
 
+.allfoodContainer{
+    height: 100%;
+    width:85%;
+    background-color: rgb(96, 255, 255);
+    display: inline-block;
+    
+}
+
+.drinkContainer{
+    height: 100%;
+    width:15%;
+    background-color: rgb(255, 255, 140);
+    display: inline-block;
+    font-size: 1rem;
+    position: absolute;
+}
+
+.foodContainer {
+    height: 33%;
+    width: 100%;
+    background-color: rgb(229, 100, 255);
+    border: solid black 1px;
+}
+
+.foodPhotoContainer{
+    height: 100%;
+    width: 75%;
+    background-color:rgb(254, 164, 99);
+    display: inline-block;
+}
+
+.foodDescriptionContainer{
+    height: 100%;
+    width: 25%;
+    background-color:rgb(184, 113, 255);
+    display: inline-block;
+}
