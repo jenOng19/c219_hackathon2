@@ -60,7 +60,7 @@ p{
     font-size: 22px;
 }
 
-#searchBox{
+#searchBar{
     position: absolute;
     top:16%;
     left: 47%;
@@ -73,7 +73,7 @@ p{
     background: #f1f1f1;
 }
 
-#searchButton{
+/* #searchButton{
     float: right;
     width: 4%;
     padding: 11px;
@@ -85,7 +85,7 @@ p{
     top: 34%;
     position: relative;
     right: 7%;
-}
+} */
 
 /* selectionPage */
 .choiceHeaderContainer{
