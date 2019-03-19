@@ -6,15 +6,13 @@ class Yelp{
         this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
 
-    getValue(){
-        return this.value
-    }
 
     handleGetData(value){
         value=this.value;
 		var ajaxConfig = {
             async: true,
             crossDomain: true,
+            dataType: "json",
             url: "http://danielpaschal.com/lfzproxies/yelpproxy.php",//?term=taco&location=irvine",
             data: {
                 term: value,
@@ -32,10 +30,16 @@ class Yelp{
 
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
-		if(response.success){
-			for(var key= 0; key<response.businesses.length; key++){
-				
-			}
-		}
+		// if(response.success){
+        var name=response['name'];
+        var image=response['image_url'];
+        var url=response['url'];
+        var phone=response['display_phone'];
+        var reviews=response['review_count'];
+        var rating=response['rating'];
+        var location=response['location']['display_address'];
+        var price=response['price'];
+        $('.modal').append(name, url, phone, reviews, rating, location, price) //.css('background-image', 'url('image')');
+        $('.modal').toggleClass('hide');
 	}
 }
