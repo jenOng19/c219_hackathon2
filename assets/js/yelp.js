@@ -6,9 +6,11 @@ class Yelp{
         this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
 
-    getValue(){
-        return this.value
-    }
+    // render(){
+    //     var display=this.handleGetData();
+    //     $('.modal').append(display);
+    //     $('.modal').toggleClass('hide');
+    // }
 
     handleGetData(value){
         value=this.value;
@@ -33,9 +35,14 @@ class Yelp{
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
 		if(response.success){
-			for(var key= 0; key<response.businesses.length; key++){
-				
-			}
+            var name=response.name;
+            var image=response.image_url;
+            var url=response.url;
+            var phone=response.display_phone
+
+            // for(var key= 0; key<response.data.length; key++){
+			// 	var students=response.data[key];
+            // $('.modal').toggleClass('hide');
 		}
 	}
 }
