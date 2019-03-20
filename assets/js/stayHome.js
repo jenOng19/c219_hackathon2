@@ -10,7 +10,6 @@ class StayHome {
     }
 
     getDataByName(value){
-        // debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -42,12 +41,22 @@ class StayHome {
                 results.append(meal, image2);
                 console.log("meal added");
         }
+
+        //results.addClass("responseContainer");
+        $('.modal').toggleClass('hide');
+        $('.slide1').append(results);
+        $('.slide2').append(image);
+        $('.slide3').append(results);
+
+
+
         this.dinner = response;
         console.log(this.dinner);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
 
     }
+
 
     grabIngredients(response){
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
@@ -66,6 +75,13 @@ class StayHome {
                 } else if (recipeKey.includes('Measure')) {
                     measurementValues.push(recipeValue);
                 }
+
+                console.log(this.ingredients);
+                console.log("total ingredients for our recipe ", totalIngredients);
+            }*/
+        };
+
+
             }
 
             var totalIngredients = [];
@@ -85,4 +101,5 @@ class StayHome {
         var ingredients = this.ingredients;
         console.log(this.ingredients);
     }
+
 }
