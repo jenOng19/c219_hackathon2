@@ -21,7 +21,7 @@ class StayHome{
             success: function(result) {
                 console.log(result);
             
-                result = result.meals[1];
+                result = result.meals[0];
                 var ingredientNames = [];
                 var measurementValues = [];
                 for (var recipeKey in result) {
