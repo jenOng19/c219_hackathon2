@@ -31,6 +31,10 @@ class Yelp{
 		$.ajax(ajaxConfig);
     }
     
+    //===================================================================================================
+    // Appends/displays the data we receive from yelp to the DOM(modal)
+    //===================================================================================================
+
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
         var results = $('<div>').html("<h1>Results<h1>");
@@ -51,26 +55,5 @@ class Yelp{
 
         results.addClass("responseContainer").append(name, imageLink, phone, reviews, rating, location, price);
         $('.modal').append(results).toggleClass('hide');
-
-
-
-
-    //===================================================================================================
-    // Appends/displays the data we receive from yelp to the DOM(modal)
-    //===================================================================================================
-
-	handleGetDataSuccess(response) {
-		console.log("response:" ,response);
-        var name=response['name'];
-        var image=response['image_url'];
-        var url=response['url'];
-        var phone=response['display_phone'];
-        var reviews=response['review_count'];
-        var rating=response['rating'];
-        var location=response['location']['display_address'];
-        var price=response['price'];
-        var div = $('<div>')
-        $('.modal').append(name, url, phone, reviews, rating, location, price);
-        $('.modal').toggleClass('hide');
 	}
 }

@@ -11,7 +11,7 @@ function startApp(){
     $('#close').click(showHideModal);
     $('#dropDownButton').click(dropDown);
     search.addEventHandlers();
-    dropDown();
+	dropDown();
 }
 
 function showHideModal(){
@@ -21,4 +21,3 @@ function showHideModal(){
 function dropDown(){
     $('.dropDownContent').toggleClass('hide');
 }
-

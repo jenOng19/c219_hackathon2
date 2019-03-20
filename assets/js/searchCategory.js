@@ -41,7 +41,5 @@ class SearchCategory{
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
         callYelp.handleGetDataSuccess();
-
     }
-
 }
