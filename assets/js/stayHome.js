@@ -50,13 +50,12 @@ class StayHome {
 
 
 
-        this.dinner = response;
+        /*this.dinner = response;
         console.log(this.dinner);
         results.addClass("responseContainer");
-        $('.modal').append(results).toggleClass('hide');
+        $('.modal').append(results).toggleClass('hide');*/
 
     }
-
 
     grabIngredients(response){
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
