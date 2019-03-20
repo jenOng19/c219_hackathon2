@@ -2,15 +2,15 @@ class StayHome {
     constructor(value) {
         this.value = value;
         this.food = {};
-        this.dinner = [];
+        this.dinner = {};
         this.ingredients = {};
         this.getDataByName=this.getDataByName.bind(this);
-        //this.getDataByIngredient = this.getDataByIngredient.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
+        this.grabIngredients = this.grabIngredients.bind(this);
     }
 
     getDataByName(value){
-        debugger;
+        // debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -34,47 +34,55 @@ class StayHome {
                 image = $("<img>").attr({
                     src: response["meals"][recipe]["strMealThumb"],
                     alt: response["meals"][recipe]["strMeal"],
+                    recipeNum: recipe,
                     width: 250,
                     height: 165.75,
                 });
-
-                results.append(meal, image);
+                var image2 = image.on('click', this.grabIngredients);
+                results.append(meal, image2);
                 console.log("meal added");
         }
+        this.dinner = response;
+        console.log(this.dinner);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
 
-            success: function(result) {
-                console.log(result);
-            
-                result = result.meals[0];
-                var ingredientNames = [];
-                var measurementValues = [];
-                for (var recipeKey in result) {
-                    var recipeValue = result[recipeKey];
+    }
 
-                    if (!recipeValue) {
-                        continue;
-                    }
+    grabIngredients(response){
+        var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
+            var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
+            var ingredientNames = [];
+            var measurementValues = [];
+            for (var recipeKey in dinner) {
+                var recipeValue = dinner[recipeKey];
 
-                    if (recipeKey.includes('Ingredient')) {
-                        ingredientNames.push(recipeValue);
-                    } else if (recipeKey.includes('Measure')) {
-                        measurementValues.push(recipeValue);
-                    }
+                if (!recipeValue) {
+                    continue;
                 }
 
-                var totalIngredients = [];
-                for (var i = 0; i < ingredientNames.length; i++) {
-                    var singleIngredient = {};
-                    singleIngredient.name = ingredientNames[i];
-                    singleIngredient.measurement = measurementValues[i];
-                    totalIngredients.push(singleIngredient);
-                    this.ingredients = totalIngredients;
+                if (recipeKey.includes('Ingredient')) {
+                    ingredientNames.push(recipeValue);
+                } else if (recipeKey.includes('Measure')) {
+                    measurementValues.push(recipeValue);
                 }
-                console.log(this.ingredients);
-                console.log("total ingredients for our recipe ", totalIngredients);
             }
-        });
+
+            var totalIngredients = [];
+            for (var i = 0; i < ingredientNames.length; i++) {
+                var singleIngredient = {};
+                singleIngredient.name = ingredientNames[i];
+                singleIngredient.measurement = measurementValues[i];
+                totalIngredients.push(singleIngredient);
+                this.ingredients = totalIngredients;
+            }
+            console.log(this.ingredients);
+            console.log("total ingredients for our recipe ", totalIngredients);
+            // renderTotalIngredients();
+        
+    }
+    renderTotalIngredients(totalIngredients){
+        var ingredients = this.ingredients;
+        console.log(this.ingredients);
     }
 }
