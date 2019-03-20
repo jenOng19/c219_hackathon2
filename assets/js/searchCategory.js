@@ -21,7 +21,9 @@ class SearchCategory{
     handleHomeButton(){
         var value=this.handleSearchBar();
         var stayHome = new StayHome(value);
+        var cocktails = new Cocktails(value);
         stayHome.getDataByName();
+        cocktails.getCocktailByName();
     }
 
     handleOutsideButton(){
