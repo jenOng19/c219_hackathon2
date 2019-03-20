@@ -13,7 +13,7 @@ class Yelp{
             async: true,
             crossDomain: true,
             dataType: "json",
-            url: "http://danielpaschal.com/lfzproxies/yelpproxy.php",//?term=taco&location=irvine",
+            url: "assets/php/yelpproxy.php",//?term=taco&location=irvine",
             data: {
                 term: value,
                 location: 'irvine',
@@ -39,7 +39,9 @@ class Yelp{
         var rating=response['rating'];
         var location=response['location']['display_address'];
         var price=response['price'];
+        var div = $('<div>')
         $('.modal').append(name, url, phone, reviews, rating, location, price) //.css('background-image', 'url('image')');
         $('.modal').toggleClass('hide');
+        // $("#searchBar").val("");
 	}
 }
