@@ -2,10 +2,16 @@ body {
     margin:0;
     font-family: Arial;
     background-color: lightslategray;
+    background-image: url(http://www.2ruidosoredheads.com/Portals/_2ruidosoreadheads/images/default/Nightlife.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
 }
 
 #searchContainer{
     height: 38vh;
+    
 }
 
 #optionsContainer{
@@ -36,10 +42,27 @@ body {
     top:9%;
     left:38%;
     height:41vh;
+    font-weight: bold;
     background-color:white;
     width:22vw;
-    border-radius:50%;
+    border-radius:10%;
+    border: 2px solid slategray;
     text-align: center;
+    background-image: url(https://i.pinimg.com/originals/27/b1/f3/27b1f30f6fe73aeae1827669da6e5b7e.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1.0;
+    font-variant: small-caps;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+
 }
 
 .outsideButton{
@@ -48,16 +71,33 @@ body {
     right:38%;
     height:41vh;
     background-color:white;
+    border: 2px solid slategray;
     width:22vw;
-    border-radius:50%;
+    border-radius:10%;
     text-align: center;
+    background-image: url(https://tupelohoneycafe.com/wp-content/uploads/2015/01/Tupelo-Honey-Cafe-South-Craft-Beer.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
+    font-size: 2rem;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;    font-variant: small-caps;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+
 }
 p{
     text-align: center;
     margin-left: 36%;
     margin-top: 5%;
     position: absolute;
-    font-size: 22px;
+    font-size: 28px;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
+    font-variant: small-caps;
 }
 
 #searchBar{
@@ -104,7 +144,7 @@ p{
     border: 2px solid slategray;
     box-shadow: 4px 4px 4px slategray;
     font-weight: bold;
-    color: slategray;
+    color: red;
     vertical-align: middle;
 }
 
