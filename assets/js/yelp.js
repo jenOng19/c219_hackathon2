@@ -5,6 +5,11 @@ class Yelp{
         this.handleGetData=this.handleGetData.bind(this);
         this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
+
+    //===================================================================================================
+    // Ajax call to get data from Yelp
+    //===================================================================================================
+
     handleGetData(value){
         value=this.value;
 		var ajaxConfig = {
@@ -24,10 +29,14 @@ class Yelp{
 			success: this.handleGetDataSuccess,
 		};
 		$.ajax(ajaxConfig);
-	}
+    }
+    
+    //===================================================================================================
+    // Appends/displays the data we receive from yelp to the DOM(modal)
+    //===================================================================================================
+
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
-
         var results = $('<div>').html("<h1>Results<h1>");
         var name = $("<div>").text(response['name']);
         var image = $("<img>").attr({
@@ -46,6 +55,5 @@ class Yelp{
 
         results.addClass("responseContainer").append(name, imageLink, phone, reviews, rating, location, price);
         $('.modal').append(results).toggleClass('hide');
-
 	}
 }
