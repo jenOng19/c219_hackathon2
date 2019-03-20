@@ -27,8 +27,25 @@ class StayHome {
     }
     handleGetDataSuccess(response){
         console.log("StayHome handleGetDataSuccess called");
-        console.log(response)
-        
+        console.log(response);
+
+        var results = $('<div>').html("<h1>Results<h1>");
+        var meal = null;
+        var image = null;
+        for(var recipe = 0; recipe < response["meals"].length; recipe++){
+                meal = $("<div>").text(response["meals"][recipe]["strMeal"]);
+                image = $("<img>").attr({
+                    src: response["meals"][recipe]["strMealThumb"],
+                    alt: response["meals"][recipe]["strMeal"],
+                    width: 250,
+                    height: 165.75,
+                });
+
+                results.append(meal, image);
+                console.log("meal added");
+        }
+        results.addClass("responseContainer");
+        $('.modal').append(results).toggleClass('hide');
 
     }
 }

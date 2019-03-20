@@ -5,8 +5,6 @@ class Yelp{
         this.handleGetData=this.handleGetData.bind(this);
         this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
-
-
     handleGetData(value){
         value=this.value;
 		var ajaxConfig = {
@@ -47,7 +45,6 @@ class Yelp{
         var price = $("<div>").text("Price: "+response['price']);
 
         results.addClass("responseContainer").append(name, imageLink, phone, reviews, rating, location, price);
-        $('.modal').append(results);
-        $('.modal').toggleClass('hide');
+        $('.modal').append(results).toggleClass('hide');
 	}
 }
