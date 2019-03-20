@@ -24,22 +24,30 @@ class Yelp{
                 "cache-control": "no-cache",
             },
 			success: this.handleGetDataSuccess,
-		}
+		};
 		$.ajax(ajaxConfig);
 	}
-
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
 		// if(response.success){
-        var name=response['name'];
-        var image=response['image_url'];
-        var url=response['url'];
-        var phone=response['display_phone'];
-        var reviews=response['review_count'];
-        var rating=response['rating'];
-        var location=response['location']['display_address'];
-        var price=response['price'];
-        $('.modal').append(name, url, phone, reviews, rating, location, price) //.css('background-image', 'url('image')');
+        var results = $('<div>').html("<h1>Results<h1>");
+        var name = $("<div>").text(response['name']);
+        var image = $("<img>").attr({
+            src: response['image_url'],
+            alt: response['name']+" "+"photo",
+            width: 250,
+            height: 165.75,
+        });
+        var url = $("<div>").text(response['url']);
+        var imageLink = $("<a>").attr({href: response['url']}).append(image);
+        var phone = $("<div>").text(response['display_phone']);
+        var reviews = $("<div>").text("Reviews: "+response['review_count']);
+        var rating = $("<div>").text("Rating: "+response['rating']+" stars");
+        var location = $("<div>").text(response['location']['display_address']);
+        var price = $("<div>").text("Price: "+response['price']);
+
+        results.addClass("responseContainer").append(name, imageLink, phone, reviews, rating, location, price);
+        $('.modal').append(results);
         $('.modal').toggleClass('hide');
 	}
 }
