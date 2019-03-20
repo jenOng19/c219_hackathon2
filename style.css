@@ -3,7 +3,6 @@ body {
     font-family: Arial;
     background-color: lightslategray;
     background-image: url(http://www.2ruidosoredheads.com/Portals/_2ruidosoreadheads/images/default/Nightlife.jpg);
-    /* background-image: url(https://image.freepik.com/free-photo/image-dark-wooden-table-front-abstract-blurred-background-outdoor-garden-lights-can-be-used-display-montage-your-products-mock-up-display-product_1715-1354.jpg); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -97,7 +96,7 @@ p{
     position: absolute;
     font-size: 28px;
     color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
     font-variant: small-caps;
 }
 
