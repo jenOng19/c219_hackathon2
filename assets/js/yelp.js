@@ -14,6 +14,7 @@ class Yelp{
         value=this.value;
 		var ajaxConfig = {
             async: true,
+            dataType: "json",
             crossDomain: true,
             url: "http://danielpaschal.com/lfzproxies/yelpproxy.php",//?term=taco&location=irvine",
             data: {
@@ -31,11 +32,10 @@ class Yelp{
 	}
 
 	handleGetDataSuccess(response) {
-		console.log("response:" ,response);
-		if(response.success){
-			for(var key= 0; key<response.businesses.length; key++){
-				
-			}
-		}
-	}
+        console.log("response:" ,response);
+        console.log("render/handleGetDataSuccess method called");
+        console.log("restaurant name is: ", response["name"]);
+        $("#optionsContainer").append(response["name"]);
+
+    }
 }

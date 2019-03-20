@@ -31,7 +31,7 @@ class SearchCategory{
     handleOutsideButton(){
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
-        callYelp.handleGetData
+        callYelp.handleGetData();
         // this.handleGetData(holdValue);
     }
 
