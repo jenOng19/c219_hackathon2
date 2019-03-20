@@ -4,7 +4,7 @@ $proxyURL = "https://api.yelp.com/v3/businesses/search";
 //$proxyURL = "https://api.fortnitetracker.com/v1/profile/{$_GET['platform']}/{$_GET['player']}";
 
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: ". implode(',',$acceptableHeaders));
+
 $params = '';
 foreach($_GET as $key=>$value){
         $params.=("&$key=".urlencode($value));
