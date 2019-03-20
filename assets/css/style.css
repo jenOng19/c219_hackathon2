@@ -6,12 +6,10 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
 }
 
 #searchContainer{
-    height: 38vh;
-    
+    height: 38vh; 
 }
 
 #optionsContainer{
@@ -25,8 +23,7 @@ body {
     width: 50%;
     height:100%;
     position: relative;
-    display: inline-block;
-    
+    display: inline-block;  
 }
 
 #partyOutsideContainer{
@@ -34,7 +31,6 @@ body {
     height: 100%;  
     position: relative;
     display: inline-block;
-
 }
 
 .homeButton{
@@ -61,8 +57,6 @@ body {
     align-items: flex-end;
     color: white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
-
-
 }
 
 .outsideButton{
@@ -87,9 +81,8 @@ body {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-end;
-
 }
-p{
+.main-title{
     text-align: center;
     margin-left: 36%;
     margin-top: 5%;
@@ -127,11 +120,6 @@ p{
     z-index: 1;
     display: flex;
 }
-.responseContainer{
-}
-.hide{
-    display: none;
-}
 
 #close{
     position:absolute;
@@ -149,36 +137,29 @@ p{
 }
 
 #dropDownButton{
-    float: right;
-    width: 4%;
+    width: 8%;
     padding: 6px;
     background: #2196F3;
-    color: white;
+    color: #ccedda;
     font-size: 17px;
     border: 2px solid black;
     cursor: pointer;
-    top: 35%;
+    top: 13%;
     position: absolute;
-    right: 7%;
+    right: 3%;
 }
 
-.dropdown-content {
-    display: none;
+.dropDownContent {
     position: relative;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    padding: -19px 4px;
     z-index: 1;
 }
 
-.dropdown-content>p{
+.dropDownContent>p{
     display: block;
     width: 100%;
     overflow: auto;
 }
-
-
 
 /* selectionPage */
 .choiceHeaderContainer{
@@ -198,8 +179,7 @@ p{
     height: 100%;
     width:85%;
     background-color: rgb(96, 255, 255);
-    display: inline-block;
-    
+    display: inline-block; 
 }
 
 .drinkContainer{
@@ -230,4 +210,8 @@ p{
     width: 70%;
     background-color:rgb(184, 113, 255);
     display: inline-block;
+}
+
+.hide{
+    display: none;
 }
