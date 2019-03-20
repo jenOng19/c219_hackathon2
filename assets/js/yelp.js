@@ -27,7 +27,7 @@ class Yelp{
 	}
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
-		// if(response.success){
+
         var results = $('<div>').html("<h1>Results<h1>");
         var name = $("<div>").text(response['name']);
         var image = $("<img>").attr({

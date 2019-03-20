@@ -10,7 +10,7 @@ class StayHome {
     }
 
     getDataByName(value){
-        debugger;
+        //debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -41,10 +41,13 @@ class StayHome {
                 results.append(meal, image);
                 console.log("meal added");
         }
-        results.addClass("responseContainer");
-        $('.modal').append(results).toggleClass('hide');
+        //results.addClass("responseContainer");
+        $('.modal').toggleClass('hide');
+        $('.slide1').append(results);
+        $('.slide2').append(image);
+        $('.slide3').append(results);
 
-            success: function(result) {
+            /*success: function(result) {
                 console.log(result);
             
                 result = result.meals[0];
@@ -74,7 +77,7 @@ class StayHome {
                 }
                 console.log(this.ingredients);
                 console.log("total ingredients for our recipe ", totalIngredients);
-            }
-        });
-    }
+            }*/
+        };
+
 }

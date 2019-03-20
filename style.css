@@ -73,7 +73,7 @@ p{
     background: #f1f1f1;
 }
 
-.modal{
+.modal, #carouselExampleIndicators{
     height:100%;
     width:100%;
     font-size:1rem;
@@ -87,8 +87,13 @@ p{
     z-index: 1;
     display: flex;
 }
-.responseContainer{
+.slide1,.slide2,.slide3{
+    left: 45%;
+    top: 10%
 }
+
+/*.responseContainer{
+}*/
 .hide{
     display: none;
 }
