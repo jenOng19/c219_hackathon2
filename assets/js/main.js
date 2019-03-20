@@ -16,6 +16,6 @@ function startApp(){
 
 function showHideModal(){
     $('.modal').toggleClass('hide');
-    $("#searchBar").val("");
+    // $("#searchBar").text("");
 }
 

@@ -11,7 +11,7 @@ class Yelp{
             async: true,
             crossDomain: true,
             dataType: "json",
-            url: "http://danielpaschal.com/lfzproxies/yelpproxy.php",//?term=taco&location=irvine",
+            url: "assets/php/yelpproxy.php",//?term=taco&location=irvine",
             data: {
                 term: value,
                 location: 'irvine',
@@ -46,5 +46,6 @@ class Yelp{
 
         results.addClass("responseContainer").append(name, imageLink, phone, reviews, rating, location, price);
         $('.modal').append(results).toggleClass('hide');
+
 	}
 }

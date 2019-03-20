@@ -1,11 +1,7 @@
 class StayHome {
     constructor(value) {
         this.value = value;
-        this.food = {
-            photo: null,
-            name: null,
-            description: null
-        }
+        this.food = {};
         this.dinner = [];
         this.ingredients = {};
         this.getDataByName=this.getDataByName.bind(this);
@@ -13,7 +9,8 @@ class StayHome {
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
     }
 
-    getDataByName(value) {
+    getDataByName(value){
+        debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -47,5 +44,37 @@ class StayHome {
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
 
+            success: function(result) {
+                console.log(result);
+            
+                result = result.meals[0];
+                var ingredientNames = [];
+                var measurementValues = [];
+                for (var recipeKey in result) {
+                    var recipeValue = result[recipeKey];
+
+                    if (!recipeValue) {
+                        continue;
+                    }
+
+                    if (recipeKey.includes('Ingredient')) {
+                        ingredientNames.push(recipeValue);
+                    } else if (recipeKey.includes('Measure')) {
+                        measurementValues.push(recipeValue);
+                    }
+                }
+
+                var totalIngredients = [];
+                for (var i = 0; i < ingredientNames.length; i++) {
+                    var singleIngredient = {};
+                    singleIngredient.name = ingredientNames[i];
+                    singleIngredient.measurement = measurementValues[i];
+                    totalIngredients.push(singleIngredient);
+                    this.ingredients = totalIngredients;
+                }
+                console.log(this.ingredients);
+                console.log("total ingredients for our recipe ", totalIngredients);
+            }
+        });
     }
 }

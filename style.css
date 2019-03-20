@@ -162,14 +162,14 @@ p{
 
 .foodPhotoContainer{
     height: 100%;
-    width: 75%;
+    width: 30%;
     background-color:rgb(254, 164, 99);
     display: inline-block;
 }
 
 .foodDescriptionContainer{
     height: 100%;
-    width: 25%;
+    width: 70%;
     background-color:rgb(184, 113, 255);
     display: inline-block;
 }
