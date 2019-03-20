@@ -8,10 +8,65 @@ body {
     background-size: cover;
     
 }
+Header {
+    
+    height: 20vh;
+    width: 100%;
+    
+
+}
+@media screen and (max-width: 600px) {
+    div.textHeader {
+      width: 100%;
+      text-align: center;
+      font-size: 35px;
+      /* margin-left: 30%; */
+      margin-top: 7%;
+      position: absolute;
+      /* font-size: 28px; */
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
+      font-variant: small-caps;
+    }
+  }
+@media screen and (min-width: 601px) {
+    div.textHeader {
+      width: 100%;
+      text-align: center;
+      /* font-size: 80px; */
+      /* margin-left: 35%; */
+      margin-top: 7%;
+      position: absolute;
+      font-size: 30px;
+      color: white;
+      text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
+      font-variant: small-caps;
+    }
+  }
+  
+/* p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+ 
+} */
 
 #searchContainer{
-    height: 38vh;
+    height: 20vh;
     
+}
+#searchBar{
+    position: relative;
+    top:45%;
+    left: 33%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid black;
+    float: right;
+    width: 80%;
+    background: #f1f1f1;
 }
 
 #optionsContainer{
@@ -89,29 +144,8 @@ body {
     align-items: flex-end;
 
 }
-p{
-    text-align: center;
-    margin-left: 36%;
-    margin-top: 5%;
-    position: absolute;
-    font-size: 28px;
-    color: white;
-    text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
-    font-variant: small-caps;
-}
 
-#searchBar{
-    position: absolute;
-    top:16%;
-    left: 47%;
-    transform: translate(-50%,-50%);
-    padding: 10px;
-    font-size: 17px;
-    border: 2px solid black;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-}
+
 
 .modal{
     height:100%;
