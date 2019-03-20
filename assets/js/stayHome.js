@@ -78,12 +78,7 @@ class StayHome {
 
                 console.log(this.ingredients);
                 console.log("total ingredients for our recipe ", totalIngredients);
-            }*/
-        };
-
-
             }
-
             var totalIngredients = [];
             for (var i = 0; i < ingredientNames.length; i++) {
                 var singleIngredient = {};

@@ -6,7 +6,7 @@ class Cocktails{
         this.ingredients = [];
         this.getCocktailByName=this.getCocktailByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
-        this.grabIngredients = this.grabIngredients.bind(this);
+        // this.grabIngredients = this.grabIngredients.bind(this);
     }
 
     getCocktailByName(value){
@@ -18,7 +18,7 @@ class Cocktails{
             url: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='+ value,
             dataType: 'json',
             method: 'get',
-            success: 
+            success:
             this.handleGetDataSuccess(),
         };
         $.ajax(ajaxConfig);
@@ -79,7 +79,7 @@ class Cocktails{
     //         console.log(this.ingredients);
     //         console.log("total ingredients for our recipe ", totalIngredients);
     //         // renderTotalIngredients();
-        
+
     // }
     // renderTotalIngredients(totalIngredients){
     //     var ingredients = this.ingredients;

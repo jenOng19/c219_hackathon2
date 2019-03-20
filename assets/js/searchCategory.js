@@ -29,9 +29,9 @@ class SearchCategory{
     handleHomeButton(){
         var value=this.handleSearchBar();
         var stayHome = new StayHome(value);
-        var cocktails = new Cocktails(value);
+        // var cocktails = new Cocktails(value);
         stayHome.getDataByName();
-        cocktails.getCocktailByName();
+        // cocktails.getCocktailByName();
     }
 
     //===================================================================================================
@@ -42,6 +42,6 @@ class SearchCategory{
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
-        callYelp.handleGetDataSuccess();
+        // callYelp.handleGetDataSuccess();
     }
 }
