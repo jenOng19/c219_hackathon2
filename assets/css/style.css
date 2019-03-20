@@ -162,8 +162,6 @@ body {
     overflow: auto;
 }
 
-
-
 /* selectionPage */
 .choiceHeaderContainer{
     height:5vh;
@@ -182,8 +180,7 @@ body {
     height: 100%;
     width:85%;
     background-color: rgb(96, 255, 255);
-    display: inline-block;
-    
+    display: inline-block; 
 }
 
 .drinkContainer{
