@@ -9,13 +9,16 @@ function startApp(){
         outsideButton: $('.outsideButton'),
     });
     $('#close').click(showHideModal);
+    $('#dropDownButton').click(dropDown);
     search.addEventHandlers();
-	
+    dropDown();
 }
-
 
 function showHideModal(){
     $('.modal').toggleClass('hide');
-    // $("#searchBar").text("");
+}
+
+function dropDown(){
+    $('.dropDownContent').toggleClass('hide');
 }
 

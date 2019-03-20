@@ -6,6 +6,9 @@ class Yelp{
         this.handleGetDataSuccess=this.handleGetDataSuccess.bind(this);
     }
 
+    //===================================================================================================
+    // Ajax call to get data from Yelp
+    //===================================================================================================
 
     handleGetData(value){
         value=this.value;
@@ -28,9 +31,13 @@ class Yelp{
 		$.ajax(ajaxConfig);
 	}
 
+
+    //===================================================================================================
+    // Appends/displays the data we receive from yelp to the DOM(modal)
+    //===================================================================================================
+
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
-		// if(response.success){
         var name=response['name'];
         var image=response['image_url'];
         var url=response['url'];
@@ -40,8 +47,7 @@ class Yelp{
         var location=response['location']['display_address'];
         var price=response['price'];
         var div = $('<div>')
-        $('.modal').append(name, url, phone, reviews, rating, location, price) //.css('background-image', 'url('image')');
+        $('.modal').append(name, url, phone, reviews, rating, location, price);
         $('.modal').toggleClass('hide');
-        // $("#searchBar").val("");
 	}
 }
