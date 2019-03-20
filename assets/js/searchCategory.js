@@ -13,10 +13,18 @@ class SearchCategory{
         $('.outsideButton').click(this.handleOutsideButton); 
     }
 
+    //====================================================================================================
+    // Gets value that was inputed in the search bar and returns the value wherever the function is called
+    //====================================================================================================
+
     handleSearchBar(){
         var userInput=this.domElements.search.val();
         return userInput;
     }
+
+    //===================================================================================================
+    // Calls handleSearchBar and passes its value into the Meal DB call
+    //===================================================================================================
 
     handleHomeButton(){
         var value=this.handleSearchBar();
@@ -24,12 +32,14 @@ class SearchCategory{
         stayHome.getDataByName();
     }
 
+    //===================================================================================================
+    // Calls handleSearchBar and passes its value into the Yelp call
+    //===================================================================================================
+
     handleOutsideButton(){
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
         callYelp.handleGetDataSuccess();
-
     }
-
 }
