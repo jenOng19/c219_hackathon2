@@ -20,9 +20,9 @@ class SearchCategory{
 
     handleHomeButton(){
         var value=this.handleSearchBar();
-        // this.handleGetData(value);
         var stayHome = new StayHome(value);
-        stayHome.getDataFromMealDb();
+        stayHome.getDataByName();
+        stayHome.getDataByIngredient();
     }
 
     handleOutsideButton(){
@@ -30,6 +30,7 @@ class SearchCategory{
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
         callYelp.handleGetDataSuccess();
+
     }
 
 }
