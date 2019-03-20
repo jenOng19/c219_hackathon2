@@ -22,7 +22,6 @@ class SearchCategory{
         var value=this.handleSearchBar();
         var stayHome = new StayHome(value);
         stayHome.getDataByName();
-        // stayHome.getDataByIngredient();
     }
 
     handleOutsideButton(){
