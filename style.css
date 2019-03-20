@@ -127,8 +127,7 @@ p{
     z-index: 1;
     display: flex;
 }
-.responseContainer{
-}
+
 .hide{
     display: none;
 }
