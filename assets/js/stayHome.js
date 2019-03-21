@@ -8,6 +8,9 @@ class StayHome {
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
         this.grabIngredients = this.grabIngredients.bind(this);
     }
+    //===============================================================================
+    // Ajax call to get data from MealDB
+    //===============================================================================
 
     getDataByName(value){
         value = this.value;
@@ -82,6 +85,9 @@ class StayHome {
 
     }
 
+    //===============================================================================
+    // callback to provide individual ingredients for selected food
+    //===============================================================================
     grabIngredients(response){
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
             var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
@@ -113,9 +119,13 @@ class StayHome {
             }
             console.log(this.ingredients);
             console.log("total ingredients for our recipe ", totalIngredients);
-            // renderTotalIngredients();
+
         
     }
+//===============================================================================
+// render to dom
+//===============================================================================
+
     renderTotalIngredients(totalIngredients){
         var ingredients = this.ingredients;
         console.log(this.ingredients);

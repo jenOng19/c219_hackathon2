@@ -31,10 +31,13 @@ class SearchCategory{
     //===================================================================================================
 
     handleHomeButton(){
+        debugger;
         var value=this.handleSearchBar();
         if(this.searchMode==='drinks'){
             var cocktails = new Cocktails(value);
             cocktails.getCocktailByName();
+            var beer = new Beer(value);
+            beer.getBeerValue();
         }else if(this.searchMode==='food'){
             var stayHome = new StayHome(value);
             stayHome.getDataByName();

@@ -9,8 +9,12 @@ class Cocktails{
         // this.grabIngredients = this.grabIngredients.bind(this);
     }
 
+//===================================================================================================
+// Ajax call to get data from cocktails DB
+//===================================================================================================
+
     getCocktailByName(value){
-        // debugger;
+        debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -23,6 +27,7 @@ class Cocktails{
         };
         $.ajax(ajaxConfig);
     }
+
     handleGetDataSuccess(response){
         console.log("cocktails!", response)
         var results = $('<div>').html("<h1>Results<h1>");
