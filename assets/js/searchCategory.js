@@ -27,12 +27,15 @@ class SearchCategory{
     //===================================================================================================
 
     handleHomeButton(){
+        debugger;
         var value=this.handleSearchBar();
         var stayHome = new StayHome(value);
+        var beer = new Beer(value);
         // var cocktails = new Cocktails(value);
-        stayHome.getDataByName();
         // cocktails.getCocktailByName();
-    }
+        stayHome.getDataByName();
+        beer.getBeerValue();
+    }   
 
     //===================================================================================================
     // Calls handleSearchBar and passes its value into the Yelp call
