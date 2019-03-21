@@ -2,15 +2,19 @@ class SearchCategory{
     constructor(elements){
         this.domElements=elements;
 
+        this.searchMode='food';
+
         this.handleSearchBar=this.handleSearchBar.bind(this);
         this.handleHomeButton=this.handleHomeButton.bind(this);
         this.handleOutsideButton=this.handleOutsideButton.bind(this);
+        this.handleDrinkLink=this.handleDrinkLink.bind(this);
     }
 
     addEventHandlers(){
 		$('#searchBar').click(this.handleSearchBar);
         $('.homeButton').click(this.handleHomeButton);
         $('.outsideButton').click(this.handleOutsideButton); 
+        $('.drinksLink').click(this.handleDrinkLink);
     }
 
     //====================================================================================================
@@ -29,13 +33,16 @@ class SearchCategory{
     handleHomeButton(){
         debugger;
         var value=this.handleSearchBar();
-        var stayHome = new StayHome(value);
-        var beer = new Beer(value);
-        // var cocktails = new Cocktails(value);
-        // cocktails.getCocktailByName();
-        stayHome.getDataByName();
-        beer.getBeerValue();
-    }   
+        if(this.searchMode==='drinks'){
+            var cocktails = new Cocktails(value);
+            cocktails.getCocktailByName();
+            var beer = new Beer(value);
+            beer.getBeerValue();
+        }else if(this.searchMode==='food'){
+            var stayHome = new StayHome(value);
+            stayHome.getDataByName();
+        }
+    }
 
     //===================================================================================================
     // Calls handleSearchBar and passes its value into the Yelp call
@@ -45,6 +52,9 @@ class SearchCategory{
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
-        // callYelp.handleGetDataSuccess();
+    }
+
+    handleDrinkLink(){
+        this.searchMode='drinks';
     }
 }

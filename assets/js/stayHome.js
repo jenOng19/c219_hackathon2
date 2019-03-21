@@ -28,10 +28,34 @@ class StayHome {
         console.log("StayHome handleGetDataSuccess called");
         console.log(response);
 
-        var results = $('<div>').html("<h1>Results<h1>");
-        var meal = null;
-        var image = null;
-        for(var recipe = 0; recipe < response["meals"].length; recipe++){
+        var meal = response["meals"][0]["strMeal"];
+        var mealTwo = response["meals"][1]["strMeal"];
+        //var mealThree = response["meals"][2]["strMeal"];
+
+        var image = $("<img>").attr({
+            src: response["meals"][0]["strMealThumb"],
+            alt: response["meals"][0]["strMeal"],
+            width: 250,
+            height: 165.75,
+        });
+        var imageTwo = $("<img>").attr({
+            src: response["meals"][1]["strMealThumb"],
+            alt: response["meals"][1]["strMeal"],
+            width: 250,
+            height: 165.75,
+        });
+
+       /* var imageThree = $("<img>").attr({
+            src: response["meals"][2]["strMealThumb"],
+            alt: response["meals"][2]["strMeal"],
+            width: 250,
+            height: 165.75,
+        });*/
+
+        var results = $('<div>').addClass("responseContainer").append(meal, image);
+        var resultsTwo = $('<div>').addClass("responseContainer").append(mealTwo, imageTwo);
+        //var resultsThree = $('<div>').addClass("responseContainer").append(mealThree, imageThree);
+        /*for(var recipe = 0; recipe < response["meals"].length; recipe++){
                 meal = $("<div>").text(response["meals"][recipe]["strMeal"]);
                 image = $("<img>").attr({
                     src: response["meals"][recipe]["strMealThumb"],
@@ -40,30 +64,30 @@ class StayHome {
                     width: 250,
                     height: 165.75,
                 });
-                var image2 = image.on('click', this.grabIngredients);
-                results.append(meal, image2);
+                //var image2 = image.on('click', this.grabIngredients);
+                results.append(meal);
                 console.log("meal added");
-        }
 
+        }*/
         //results.addClass("responseContainer");
+
         $('.modal').toggleClass('hide');
         $('.slide1').append(results);
-        $('.slide2').append(image);
-        $('.slide3').append(results);
+        $('.slide2').append(resultsTwo);
+        //$('.slide3').append(resultsThree);
 
 
 
-        this.dinner = response;
+        /*this.dinner = response;
         console.log(this.dinner);
         results.addClass("responseContainer");
-        $('.modal').append(results).toggleClass('hide');
+        $('.modal').append(results).toggleClass('hide');*/
 
     }
 
     //===============================================================================
     // callback to provide individual ingredients for selected food
     //===============================================================================
-
     grabIngredients(response){
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
             var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];

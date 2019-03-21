@@ -29,7 +29,7 @@ class Cocktails{
     }
 
     handleGetDataSuccess(response){
-        console.log("cocktails!")
+        console.log("cocktails!", response)
         var results = $('<div>').html("<h1>Results<h1>");
         var drinks = null;
         var image = null;
