@@ -51,6 +51,7 @@ Header {
  
 } */
 
+
 #searchContainer {
     height: 20vh;
 }
@@ -66,6 +67,31 @@ Header {
     width: 80%;
     background: #f1f1f1;
 }
+#dropDownButton{
+    width: 6%;
+    padding: 7px;
+    background: #2196F3;
+    color: #ccedda;
+    font-size: 17px;
+    border: 2px solid black;
+    cursor: pointer;
+    top: 26%;
+    position: absolute;
+    right: 3%;
+}
+
+.dropDownContent {
+    position: relative;
+    padding: -19px 4px;
+    z-index: 1;
+}
+
+.dropDownContent>p{
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+
 
 #optionsContainer{
     height: 62vh;
@@ -137,6 +163,7 @@ Header {
     justify-content: center;
     align-items: flex-end;
 }
+
 .modal, #carouselExampleIndicators{
     height:100%;
     width:100%;
@@ -175,30 +202,6 @@ Header {
     vertical-align: middle;
 }
 
-#dropDownButton{
-    width: 8%;
-    padding: 6px;
-    background: #2196F3;
-    color: #ccedda;
-    font-size: 17px;
-    border: 2px solid black;
-    cursor: pointer;
-    top: 13%;
-    position: absolute;
-    right: 3%;
-}
-
-.dropDownContent {
-    position: relative;
-    padding: -19px 4px;
-    z-index: 1;
-}
-
-.dropDownContent>p{
-    display: block;
-    width: 100%;
-    overflow: auto;
-}
 
 /* selectionPage */
 .choiceHeaderContainer{
