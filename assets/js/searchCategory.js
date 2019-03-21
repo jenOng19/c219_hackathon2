@@ -2,15 +2,19 @@ class SearchCategory{
     constructor(elements){
         this.domElements=elements;
 
+        this.searchMode='food';
+
         this.handleSearchBar=this.handleSearchBar.bind(this);
         this.handleHomeButton=this.handleHomeButton.bind(this);
         this.handleOutsideButton=this.handleOutsideButton.bind(this);
+        this.handleDrinkLink=this.handleDrinkLink.bind(this);
     }
 
     addEventHandlers(){
 		$('#searchBar').click(this.handleSearchBar);
         $('.homeButton').click(this.handleHomeButton);
         $('.outsideButton').click(this.handleOutsideButton); 
+        $('.drinksLink').click(this.handleDrinkLink);
     }
 
     //====================================================================================================
@@ -28,10 +32,13 @@ class SearchCategory{
 
     handleHomeButton(){
         var value=this.handleSearchBar();
-        var stayHome = new StayHome(value);
-        // var cocktails = new Cocktails(value);
-        stayHome.getDataByName();
-        // cocktails.getCocktailByName();
+        if(this.searchMode==='drinks'){
+            var cocktails = new Cocktails(value);
+            cocktails.getCocktailByName();
+        }else if(this.searchMode==='food'){
+            var stayHome = new StayHome(value);
+            stayHome.getDataByName();
+        }
     }
 
     //===================================================================================================
@@ -42,6 +49,9 @@ class SearchCategory{
         var holdValue=this.handleSearchBar();
         var callYelp= new Yelp(holdValue);
         callYelp.handleGetData();
-        // callYelp.handleGetDataSuccess();
+    }
+
+    handleDrinkLink(){
+        this.searchMode='drinks';
     }
 }
