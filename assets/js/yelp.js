@@ -37,11 +37,17 @@ class Yelp{
 
 	handleGetDataSuccess(response) {
 		console.log("response:" ,response);
-        var results = $('<div>').addClass("responseContainer");
+
+		var results = $('<div>').addClass("responseContainer");
         var resultsTwo = $('<div>').addClass("responseContainer");
         var resultsThree = $('<div>').addClass("responseContainer");
 
-        var name = $("<div>").text(response["businesses"][0]['name']);
+        //from response, retrieve name, image/imageLink, phone, number of reviews, rating, location, price; append to carousel dom elements
+        //loop to retrieve
+
+
+
+        /*var name = $("<div>").text(response["businesses"][0]['name']);
         var nameTwo =$("<div>").text(response["businesses"][1]['name']);
         var nameThree = $("<div>").text(response["businesses"][2]['name']);
 
@@ -89,7 +95,7 @@ class Yelp{
 
         var price = $("<div>").text("Price: "+response["businesses"][0]['price']);
         var priceTwo = $("<div>").text("Price: "+response["businesses"][1]['price']);
-        var priceThree = $("<div>").text("Price: "+response["businesses"][2]['price']);
+        var priceThree = $("<div>").text("Price: "+response["businesses"][2]['price']);*/
 
         results.append(name, imageLink, phone, reviews, rating, location, price);
         resultsTwo.append(nameTwo, imageLinkTwo, phoneTwo, reviewsTwo, ratingTwo, locationTwo, priceTwo);
