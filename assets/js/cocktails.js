@@ -2,11 +2,10 @@ class Cocktails{
     constructor(value){
         this.value = value;
         this.cocktails = {};
-        this.dinner = [];
         this.ingredients = [];
         this.getCocktailByName=this.getCocktailByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
-        // this.grabIngredients = this.grabIngredients.bind(this);
+        this.grabIngredients = this.grabIngredients.bind(this);
     }
 
 //===================================================================================================
@@ -32,8 +31,8 @@ class Cocktails{
         var results = $('<div>').html("<h1>Results<h1>");
         var drinks = null;
         var image = null;
-        debugger;
-        for(var cockTailIndex = 0; cockTailIndex < response["drinks"].length; recipe++){
+        // debugger;
+        for(var cockTailIndex = 0; cockTailIndex < response["drinks"].length; cockTailIndex++){
                 drinks = $("<div>").text(response["drinks"][cockTailIndex]["strDrink"]);
                 image = $("<img>").attr({
                     src: response["drinks"][cockTailIndex]["strDrinkThumb"],
@@ -46,20 +45,21 @@ class Cocktails{
                 results.append(drinks, image2);
                 console.log("meal added");
         }
-        this.dinner = response;
-        console.log(this.dinner);
+        this.cocktail = response;
+        console.log(this.cocktail);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
-
+        console.log(this.grabIngredients(response));
     }
 
     grabIngredients(response){
+        debugger;
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
-            var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
+            var cocktails = this.cocktails.meals[parseInt(clickedrecipeNum)];
             var ingredientNames = [];
             var measurementValues = [];
-            for (var recipeKey in dinner) {
-                var recipeValue = dinner[recipeKey];
+            for (var recipeKey in cocktails) {
+                var recipeValue = cocktails[recipeKey];
 
                 if (!recipeValue) {
                     continue;
