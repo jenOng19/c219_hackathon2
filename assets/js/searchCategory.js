@@ -48,6 +48,13 @@ class SearchCategory{
         if(this.searchMode==='out'){
             var callYelp= new Yelp(foodValue, drinkValue);
             callYelp.handleGetData();
+        }else{
+            if(!drinkValue){
+                var homeFood = new StayHome(foodValue);
+                homeFood.getDataByName();
+            }else if(!foodValue){
+                var drinks= new Cocktails(drinkValue);
+            }
         }
     }
 
