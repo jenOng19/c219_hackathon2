@@ -8,8 +8,7 @@ function startApp(){
         yelpButton:$('#yelpButton'),
         foodInput: $('#foodSearchBar'),
         drinkInput: $('#drinkSearchBar'),
-        // homeButton: $('.homeButton'),
-        // outsideButton: $('.outsideButton'),
+        searchButton: $('#searchButton'),
     });
     search.addEventHandlers();
 }
