@@ -44,21 +44,21 @@ class Yelp {
             //create dom elements using the response values
             var results = $('<div>');
             var name = $("<div>").text(response["businesses"][biz]["name"]);
-            console.log(name)
             var pic = $("<img>").attr({
                 src: response["businesses"][biz]['image_url'],
                 alt: response["businesses"][biz]['name'] + " " + "photo",
-                width: 250,
-                height: 165.75,
+                width: 375,
+                height: 248.625,
             });
-            var picLink = $("<a>").attr({href: response["businesses"][biz]['url']}).append(pic); //add this to dom(not pic)
+            var picLink = $("<a>").attr({href: response["businesses"][biz]['url']}).append(pic);
             var phone = $("<div>").text("Phone: " + response["businesses"][biz]['display_phone']);
             var review = $("<div>").text("Reviews: " + response["businesses"][biz]['review_count']);
             var rating = $("<div>").text("Rating: " + response["businesses"][biz]['rating'] + " Stars");
             var address = $("<div>").text(response["businesses"][biz]['location']['display_address']);
             var price = $("<div>").text("Pricing: " + response["businesses"][biz]['price']);
-            ////append to respective results container
+
             results.append(name, picLink, phone, review, rating, price);
+            //append to respective results container
             if (biz === 0) {
                 $('.resultOne').append(results);
             } else {
