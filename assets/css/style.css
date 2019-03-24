@@ -270,7 +270,7 @@ body {
 #close{
     position:absolute;
     top:3px;
-    right:2px;
+    right:20px;
     width:26px;
     height:24px;
     background-color:  #ccedda;
@@ -280,7 +280,11 @@ body {
     font-weight: bold;
     color: slategray;
     vertical-align: middle;
+    z-index: 4;
+}
+
 } */
+
 
 
 /* selectionPage */
