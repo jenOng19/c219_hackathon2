@@ -112,25 +112,22 @@ body {
 }
 
 
-#carouselExampleIndicators{
-    height:100%;
-    width:100%;
-    font-size:1rem;
-    color: #ccedda;
-    background-color: lightslategray;
-    position: absolute;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    text-align: justify;
-    z-index: 1;
-}  
+.carousel-item{
+    height: 100vh;
+    background-color: #204d74;
+}
 
-.slide1,.slide2,.slide3{
-    left: 41%;
-    top: 30%
-} 
+/*.slide1,.slide2,.slide3{
 
+
+}*/
+.resultsContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: inherit;
+}
 /* 
 #close{
     position:absolute;
