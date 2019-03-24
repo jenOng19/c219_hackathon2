@@ -2,11 +2,10 @@ class Cocktails{
     constructor(value){
         this.value = value;
         this.cocktails = {};
-        this.dinner = [];
         this.ingredients = [];
         this.getCocktailByName=this.getCocktailByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
-        // this.grabIngredients = this.grabIngredients.bind(this);
+        this.grabIngredients = this.grabIngredients.bind(this);
     }
 
 //===================================================================================================
@@ -14,7 +13,6 @@ class Cocktails{
 //===================================================================================================
 
     getCocktailByName(value){
-        debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -23,7 +21,7 @@ class Cocktails{
             dataType: 'json',
             method: 'get',
             success:
-            this.handleGetDataSuccess(),
+            this.handleGetDataSuccess,
         };
         $.ajax(ajaxConfig);
     }
@@ -33,8 +31,8 @@ class Cocktails{
         var results = $('<div>').html("<h1>Results<h1>");
         var drinks = null;
         var image = null;
-        debugger;
-        for(var cockTailIndex = 0; cockTailIndex < response["drinks"].length; recipe++){
+        // debugger;
+        for(var cockTailIndex = 0; cockTailIndex < response["drinks"].length; cockTailIndex++){
                 drinks = $("<div>").text(response["drinks"][cockTailIndex]["strDrink"]);
                 image = $("<img>").attr({
                     src: response["drinks"][cockTailIndex]["strDrinkThumb"],
@@ -47,47 +45,48 @@ class Cocktails{
                 results.append(drinks, image2);
                 console.log("meal added");
         }
-        this.dinner = response;
-        console.log(this.dinner);
+        this.cocktail = response;
+        console.log(this.cocktail);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
-
+        console.log(this.grabIngredients(response));
     }
 
-    // grabIngredients(response){
-    //     var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
-    //         var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
-    //         var ingredientNames = [];
-    //         var measurementValues = [];
-    //         for (var recipeKey in dinner) {
-    //             var recipeValue = dinner[recipeKey];
+    grabIngredients(response){
+        debugger;
+        var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
+            var cocktails = this.cocktails.meals[parseInt(clickedrecipeNum)];
+            var ingredientNames = [];
+            var measurementValues = [];
+            for (var recipeKey in cocktails) {
+                var recipeValue = cocktails[recipeKey];
 
-    //             if (!recipeValue) {
-    //                 continue;
-    //             }
+                if (!recipeValue) {
+                    continue;
+                }
 
-    //             if (recipeKey.includes('Ingredient')) {
-    //                 ingredientNames.push(recipeValue);
-    //             } else if (recipeKey.includes('Measure')) {
-    //                 measurementValues.push(recipeValue);
-    //             }
-    //         }
+                if (recipeKey.includes('Ingredient')) {
+                    ingredientNames.push(recipeValue);
+                } else if (recipeKey.includes('Measure')) {
+                    measurementValues.push(recipeValue);
+                }
+            }
 
-    //         var totalIngredients = [];
-    //         for (var i = 0; i < ingredientNames.length; i++) {
-    //             var singleIngredient = {};
-    //             singleIngredient.name = ingredientNames[i];
-    //             singleIngredient.measurement = measurementValues[i];
-    //             totalIngredients.push(singleIngredient);
-    //             this.ingredients = totalIngredients;
-    //         }
-    //         console.log(this.ingredients);
-    //         console.log("total ingredients for our recipe ", totalIngredients);
-    //         // renderTotalIngredients();
+            var totalIngredients = [];
+            for (var i = 0; i < ingredientNames.length; i++) {
+                var singleIngredient = {};
+                singleIngredient.name = ingredientNames[i];
+                singleIngredient.measurement = measurementValues[i];
+                totalIngredients.push(singleIngredient);
+                this.ingredients = totalIngredients;
+            }
+            console.log(this.ingredients);
+            console.log("total ingredients for our recipe ", totalIngredients);
+            // renderTotalIngredients();
 
-    // }
-    // renderTotalIngredients(totalIngredients){
-    //     var ingredients = this.ingredients;
-    //     console.log(this.ingredients);
-    // }
+    }
+    renderTotalIngredients(totalIngredients){
+        var ingredients = this.ingredients;
+        console.log(this.ingredients);
+    }
 }

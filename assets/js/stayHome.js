@@ -82,7 +82,7 @@ class StayHome {
         console.log(this.dinner);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');*/
-
+        console.log(this.grabIngredients(response));
     }
 
     //===============================================================================
