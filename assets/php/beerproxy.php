@@ -11,7 +11,7 @@ $headers = apache_request_headers();
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "$proxyURL",
+  CURLOPT_URL => "$proxyURL&name=" . $_GET['name'],
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => "",
   CURLOPT_MAXREDIRS => 10,
