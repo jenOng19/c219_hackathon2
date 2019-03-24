@@ -36,8 +36,8 @@ class Yelp{
     //===================================================================================================
 
 	handleGetDataSuccess(response) {
-        console.log("response:" ,response);
-    
+		console.log("response:" ,response);
+
         var resultsObj = {
             firstResult: $('<div>').addClass("resultContainer"),
             secondResult: $('<div>').addClass("resultContainer"),
@@ -80,6 +80,6 @@ class Yelp{
         }
 
         //when response dom elements have been created and added to carousel slides, remove hide class from modal to make it appear and display the carousel
-        $('.carousel').toggleClass('hide');
+        $('.modal').toggleClass('hide');
 	}
 }
