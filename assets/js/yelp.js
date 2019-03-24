@@ -80,6 +80,6 @@ class Yelp{
         }
 
         //when response dom elements have been created and added to carousel slides, remove hide class from modal to make it appear and display the carousel
-        $('.modal').toggleClass('hide');
+        $('.carousel').toggleClass('hide');
 	}
 }

@@ -20,8 +20,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-   
-
 </head>
 <body>
     <!-- <header>
@@ -31,73 +29,50 @@
     </header> -->
 
     <div class="main">
-        <div class="recipes"> 
+        <div class="recipes">
             <button id="recipeButton" type="button">Let's Cook!</button>
         </div>
         <div class="yelp">
             <button id="yelpButton" type="button">Let's Go Out!</button>
         </div>
     </div>
+    <!--carousel code-->
+    <div id="carouselExampleIndicators" class="carousel slide hide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
 
-    <div class="modal hide">
-        <div class="choiceBody">
-            <div class="allfoodContainer">
-                <div class="foodContainer">
-                    <div class="foodPhotoContainer"></div>
-                    <div class="foodDescriptionContainer"></div>    
-                </div>
-                <div class="foodContainer"></div>
-                <div class="foodContainer"></div>
+        <div class="carousel-inner"> <!--target here for empty between each search-->
+
+            <div class="carousel-item slide1 active"><!--first slide-->
+                <div class="resultOne"></div>
             </div>
-            <!--<div class="drinkContainer">you might be interested in</div>-->
-        </div>
-        <!--appending .modal  happens here-->
-
-        <!--carousel code-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-
-            <div class="carousel-inner"> <!--target here for empty between each search-->
-
-                <div class="carousel-item slide1 active"><!--first slide-->
-                    <div class="resultOne"></div>
-
-                </div>
-
-                <div class="carousel-item slide2"><!--second slide-->
-                    <div class="resultTwo"></div>
-
-                </div>
-
-                <div class="carousel-item slide3"><!--third slide-->
-                    <div class="resultThree"></div>
-
-                </div>
-
+            <div class="carousel-item slide2"><!--second slide-->
+                <div class="resultTwo"></div>
+            </div>
+            <div class="carousel-item slide3"><!--third slide-->
+                <div class="resultThree"></div>
             </div>
 
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-        <!--end carousel code-->
-        <button id="close" class="button">X</button>
 
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--end carousel code-->
 
     <div class="input hide">
-            <input id="foodSearchBar" type="text" placeholder="Search for food.." name="search"/>
-            <input id="drinkSearchBar" type="text" placeholder="Search for drinks.." name="search"/>
-            <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
-
+        <input id="foodSearchBar" type="text" placeholder="Search for food.." name="search"/>
+        <input id="drinkSearchBar" type="text" placeholder="Search for drinks.." name="search"/>
+        <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
     </div>
 
 </body>

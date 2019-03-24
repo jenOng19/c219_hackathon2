@@ -15,7 +15,7 @@ class SearchCategory{
     addEventHandlers(){
         $('#recipeButton').click(this.handleRecipeAndYelpButton);
         $('#yelpButton').click(this.handleRecipeAndYelpButton);
-		// $('#searchBar').click(this.handleSearchBar);
+		$('#searchButton').click(this.handleSearchBar);
         // $('.homeButton').click(this.handleHomeButton);
         // $('.outsideButton').click(this.handleOutsideButton); 
         // $('.drinksLink').click(this.handleDrinkLink);
