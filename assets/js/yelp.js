@@ -36,7 +36,8 @@ class Yelp{
     //===================================================================================================
 
 	handleGetDataSuccess(response) {
-		console.log("response:" ,response);
+        console.log("response:" ,response);
+        // should do a loop
         var results = $('<div>').addClass("responseContainer");
         var resultsTwo = $('<div>').addClass("responseContainer");
         var resultsThree = $('<div>').addClass("responseContainer");
