@@ -1,47 +1,41 @@
 body {
     margin:0;
     font-family: Arial;
-    background-color: lightslategray;
-    background-image: url(http://www.2ruidosoredheads.com/Portals/_2ruidosoreadheads/images/default/Nightlife.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; 
 }
-Header {
-    
+/* .textHeader {
     height: 20vh;
     width: 100%;
-    
+} */
 
-}
-@media screen and (max-width: 600px) {
+/* mediaqueries should be at bottom */
+/* @media screen and (max-width: 600px) {
     div.textHeader {
       width: 100%;
       text-align: center;
       font-size: 35px;
       /* margin-left: 30%; */
-      margin-top: 7%;
+      /* margin-top: 7%;
       position: absolute;
       /* font-size: 28px; */
-      color: white;
+      /* color: white;
       text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
       font-variant: small-caps;
     }
-  }
-@media screen and (min-width: 601px) {
+  } */ 
+/* @media screen and (min-width: 601px) {
     div.textHeader {
       width: 100%;
-      text-align: center;
+      text-align: center; */
       /* font-size: 80px; */
       /* margin-left: 35%; */
-      margin-top: 7%;
+      /* margin-top: 7%;
       position: absolute;
       font-size: 30px;
       color: white;
       text-shadow: 1px 1px 2px black, 0 0 25px rgb(0, 255, 195), 0 0 5px darkblue;
       font-variant: small-caps;
     }
-  }
+  } */ 
   
 /* p {
     display: flex;
@@ -51,8 +45,96 @@ Header {
  
 } */
 
+.main{
+    height: 100vh;
+    background-color: rgb(200, 214, 228);
+}
 
-#searchContainer {
+.recipes{
+    height: 100%;
+    width: 50vw;
+    background-color: lightslategray;
+}
+
+.yelp{
+    height: 100%;
+    width: 50vw;
+    background-color: darkslategray;
+}
+
+#recipeButton{
+    width: 24%;
+    padding: 10px;
+    background: #2196F3;
+    color: #ccedda;
+    font-size: 17px;
+    border: 2px solid black;
+    cursor: pointer;
+    top: 65%;
+    position: relative;
+    right: -36%;
+}
+
+#yelpButton{
+    width: 10%;
+    padding: 10px;
+    background: #2196F3;
+    color: #ccedda;
+    font-size: 17px;
+    border: 2px solid black;
+    cursor: pointer;
+    top: 65%;
+    position: absolute;
+    right: 19%;
+}
+
+.input{
+    height: 100vh;
+    background-color: lightslategray; 
+    background-image: url(http://www.2ruidosoredheads.com/Portals/_2ruidosoreadheads/images/default/Nightlife.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;  
+}
+
+#foodSearchBar{
+    position: relative;
+    top:45%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid black;
+    width: 30%;
+    background: #f1f1f1;
+}
+
+#drinkSearchBar{
+    position: absolute;
+    top:45%;
+    left: 61%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    font-size: 17px;
+    border: 2px solid black;
+    float: right;
+    width: 30%;
+    background: #f1f1f1;
+}
+#searchButton{
+    width: 6%;
+    padding: 10px;
+    background: #2196F3;
+    color: #ccedda;
+    font-size: 17px;
+    border: 2px solid black;
+    cursor: pointer;
+    top: 42%;
+    position: absolute;
+    right: 17%;
+} 
+
+/* #searchContainer {
     height: 20vh;
 }
 #searchBar{
@@ -67,9 +149,9 @@ Header {
     width: 80%;
     background: #f1f1f1;
 }
-#dropDownButton{
+#searchButton{
     width: 6%;
-    padding: 7px;
+    padding: 10px;
     background: #2196F3;
     color: #ccedda;
     font-size: 17px;
@@ -77,9 +159,9 @@ Header {
     cursor: pointer;
     top: 26%;
     position: absolute;
-    right: 3%;
-}
-
+    right: 1%;
+} */
+/* 
 .dropDownContent {
     position: relative;
     padding: -19px 4px;
@@ -90,9 +172,9 @@ Header {
     display: block;
     width: 100%;
     overflow: auto;
-}
+} */
 
-
+/* 
 #optionsContainer{
     height: 62vh;
     position: relative;
@@ -100,21 +182,21 @@ Header {
 }
 
 
-#homeContainer{
+#foodContainer{
     width: 50%;
     height:100%;
     position: relative;
     display: inline-block;
 }
 
-#partyOutsideContainer{
+#drinkContainer{
     width: 50%;
     height: 100%;  
     position: relative;
     display: inline-block;
 }
 
-.homeButton{
+.foodButton{
     position:relative;
     top:9%;
     left:38%;
@@ -140,7 +222,7 @@ Header {
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 
-.outsideButton{
+.drinksButton{
     position: absolute;
     top:9%;
     right:38%;
@@ -162,9 +244,9 @@ Header {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: flex-end;
-}
+} */
 
-.modal, #carouselExampleIndicators{
+/* .modal, #carouselExampleIndicators{
     height:100%;
     width:100%;
     font-size:1rem;
@@ -177,15 +259,13 @@ Header {
     text-align: justify;
     z-index: 1;
     display: flex;
-}
+} */
 
-.slide1,.slide2,.slide3{
+/* .slide1,.slide2,.slide3{
     left: 41%;
     top: 30%
 }
 
-/*.responseContainer{
-}*/
 
 #close{
     position:absolute;
@@ -203,9 +283,12 @@ Header {
     z-index: 4;
 }
 
+} */
+
+
 
 /* selectionPage */
-.choiceHeaderContainer{
+/* .choiceHeaderContainer{
     height:5vh;
     background-color: rgb(240, 120, 120);
     text-align: center;
@@ -253,8 +336,12 @@ Header {
     width: 25%;
     background-color:rgb(184, 113, 255);
     display: inline-block;
-}
+} */
 
 .hide{
     display: none;
 }
+
+/* .show{
+    visibility: visible;
+} */

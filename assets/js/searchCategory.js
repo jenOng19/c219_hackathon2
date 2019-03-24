@@ -2,20 +2,33 @@ class SearchCategory{
     constructor(elements){
         this.domElements=elements;
 
-        this.searchMode='food';
+        // this.searchMode='food';
 
-        this.handleSearchBar=this.handleSearchBar.bind(this);
-        this.handleHomeButton=this.handleHomeButton.bind(this);
-        this.handleOutsideButton=this.handleOutsideButton.bind(this);
-        this.handleDrinkLink=this.handleDrinkLink.bind(this);
+        this.handleRecipeAndYelpButton=this.handleRecipeAndYelpButton.bind(this);
+        // this.handleYelpButton=this.handleYelpButton.bind(this);
+        // this.handleSearchBar=this.handleSearchBar.bind(this);
+        // this.handleHomeButton=this.handleHomeButton.bind(this);
+        // this.handleOutsideButton=this.handleOutsideButton.bind(this);
+        // this.handleDrinkLink=this.handleDrinkLink.bind(this);
     }
 
     addEventHandlers(){
-		$('#searchBar').click(this.handleSearchBar);
-        $('.homeButton').click(this.handleHomeButton);
-        $('.outsideButton').click(this.handleOutsideButton); 
-        $('.drinksLink').click(this.handleDrinkLink);
+        $('#recipeButton').click(this.handleRecipeAndYelpButton);
+        $('#yelpButton').click(this.handleRecipeAndYelpButton);
+		// $('#searchBar').click(this.handleSearchBar);
+        // $('.homeButton').click(this.handleHomeButton);
+        // $('.outsideButton').click(this.handleOutsideButton); 
+        // $('.drinksLink').click(this.handleDrinkLink);
     }
+
+    handleRecipeAndYelpButton(){
+        $('.input').toggleClass('hide');
+        $('.main').toggleClass('hide');
+    }
+
+    // handleYelpButton(){
+
+    // }
 
     //====================================================================================================
     // Gets value that was inputed in the search bar and returns the value wherever the function is called
@@ -36,8 +49,8 @@ class SearchCategory{
         if(this.searchMode==='drinks'){
             var cocktails = new Cocktails(value);
             cocktails.getCocktailByName();
-            var beer = new Beer(value);
-            beer.getBeerValue();
+            // var beer = new Beer(value);
+            // beer.getBeerValue();
         }else if(this.searchMode==='food'){
             var stayHome = new StayHome(value);
             stayHome.getDataByName();

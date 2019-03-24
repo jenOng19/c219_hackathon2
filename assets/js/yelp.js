@@ -36,8 +36,8 @@ class Yelp{
     //===================================================================================================
 
 	handleGetDataSuccess(response) {
-		console.log("response:" ,response);
-
+        console.log("response:" ,response);
+    
         var resultsObj = {
             firstResult: $('<div>').addClass("resultContainer"),
             secondResult: $('<div>').addClass("resultContainer"),
