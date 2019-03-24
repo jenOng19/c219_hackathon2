@@ -38,10 +38,11 @@ class Yelp {
     handleGetDataSuccess(response) {
         console.log("response:", response);
         //from response, retrieve name, image/imageLink, phone, number of reviews, rating, location, price; append to carousel dom elements
-
-        for (var biz = 0; biz <= 1; biz++) {
+        this.infoTiles = [];
+        for (var biz = 0; biz <= 5; biz++) {
             //pull all the desired response values for current biz and store in variables
             //create dom elements using the response values
+
             var results = $('<div>');
             var name = $("<div>").text(response["businesses"][biz]["name"]);
             var pic = $("<img>").attr({
@@ -59,14 +60,16 @@ class Yelp {
 
             results.append(name, picLink, phone, review, rating, price);
             //append to respective results container
-            if (biz === 0) {
-                $('.resultOne').append(results);
-            } else {
-                $('.resultTwo').append(results);
-            }
+            this.infoTiles.push(results);
         }
+        for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {
+            $('.result'+tile).append(this.infoTiles[tile]);
+        }
+        //empties the array of result tiles to prepare for next time the method is called to do work again
+        this.infoTiles.length = 0;
         //.carousel hide: off, .input hide: on
         $('#apiResponseCarousel').toggleClass('hide');
         $('.input').toggleClass('hide');
     }
+
 }
