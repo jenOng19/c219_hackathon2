@@ -48,18 +48,25 @@ body {
 .main{
     height: 100vh;
     background-color: rgb(200, 214, 228);
+    font-size: 0;
+    position:relative;
 }
 
 .recipes{
     height: 100%;
     width: 50vw;
     background-color: lightslategray;
+    display: inline-block;
+    position:absolute;
 }
 
 .yelp{
     height: 100%;
     width: 50vw;
     background-color: darkslategray;
+    display: inline-block;
+    position: absolute;
+
 }
 
 #recipeButton{
