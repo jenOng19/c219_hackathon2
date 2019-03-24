@@ -65,8 +65,6 @@ body {
     width: 50vw;
     background-color: darkslategray;
     display: inline-block;
-    position: absolute;
-
 }
 
 #recipeButton{
