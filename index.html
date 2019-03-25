@@ -3,10 +3,10 @@
 <head>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- make better title for bookmark bar -->
-    <title>Dine</title>
+    <!-- Title for bookmark bar -->
+    <title>Dinner Planner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/stayHome.js"></script>
@@ -22,25 +22,37 @@
 </head>
 <body>
     <!-- <header>
-        <div class="textHeader">
-            <p>plan out your next dinner party</p>     
+        <div class="title">
+            <p>Dinner Planner</p>     
         </div>
     </header> -->
+
+    <!-- main page: cook at home or go out to eat -->
+
     <div class="main">
+        <!-- <div class="title">
+            Dinner Planner
+        </div> -->
         <div class="recipes">
+            <!-- <div class="recipeTitle">Recipes</div> -->
             <button id="recipeButton" type="button">Let's Cook!</button>
         </div>
         <div class="yelp">
+            <!-- <div class="eatOutTitle">Night Out</div> -->
             <button id="yelpButton" type="button">Let's Go Out!</button>
         </div>
     </div>
-    <!--search bar code-->
+    
+    <!-- Food and drinks input field -->
+
     <div class="input hide">
-            <input id="foodSearchBar" type="text" placeholder="Search for food.." name="search"/>
-            <input id="drinkSearchBar" type="text" placeholder="Search for drinks.." name="search"/>
-            <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
+        <input id="foodSearchBar" type="text" placeholder="Search for food.." name="search"/>
+        <input id="drinkSearchBar" type="text" placeholder="Search for drinks.." name="search"/>
+        <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
     </div>
+
     <!--carousel code-->
+
     <div id="apiResponseCarousel" class="carousel slide hide" data-ride="carousel" data-interval="false">
         <ol class="carousel-indicators">
             <li data-target="#apiResponseCarousel" data-slide-to="0" class="active"></li>

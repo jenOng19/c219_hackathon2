@@ -10,12 +10,40 @@ body {
     position:relative;
 }
 
+/* .title{
+    z-index: 1;
+    font-size: 6vw;
+    top: 0%;
+    right: 30%;
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+} */
+
+/* .recipeTitle{
+    font-size: 4vw;
+    position: relative;
+    display: inline-block;
+    top: 23%;
+    left: 34%;
+}
+
+.eatOutTitle{
+    font-size: 4vw;
+    position: relative;
+    display: inline-block;
+    top: 23%;
+    left: 135%;
+} */
+
 .recipes{
     height: 100%;
     width: 50vw;
     background-color: lightslategray;
     display: inline-block;
-    position:absolute;
+    position:relative;
+    background-image: url("");
+    background-repeat: no-repeat;
+    /* background-size: 100%; */
 }
 
 .yelp{
@@ -23,32 +51,36 @@ body {
     width: 50vw;
     background-color: darkslategray;
     display: inline-block; 
+    background-image: url("../css/eatOutImage.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
 }
 
 #recipeButton{
-    width: 24%;
+    width: 23%;
     padding: 10px;
     background: #2196F3;
     color: #ccedda;
-    font-size: 17px;
+    font-size: 1.5vw;
     border: 2px solid black;
     cursor: pointer;
-    top: 65%;
+    top: 66%;
     position: relative;
-    right: -36%;
+    right: -35%;
 }
 
 #yelpButton{
-    width: 10%;
+    width: 22%;
     padding: 10px;
     background: #2196F3;
     color: #ccedda;
-    font-size: 17px;
+    font-size: 1.5vw;
     border: 2px solid black;
     cursor: pointer;
-    top: 65%;
+    top: 70%;
     position: absolute;
-    right: 19%;
+    right: 36%;
 }
 
 .input{
