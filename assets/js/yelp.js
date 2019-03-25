@@ -69,7 +69,11 @@ class Yelp {
         this.infoTiles.length = 0;
         //.carousel hide: off, .input hide: on
         $('#apiResponseCarousel').toggleClass('hide');
-        $('.input').toggleClass('hide');
+        $('.input').css({
+            height: "15vh"
+            /*justifyContent: "flex-end",*/
+        });
+
     }
 
 }
