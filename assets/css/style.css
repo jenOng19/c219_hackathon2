@@ -109,7 +109,7 @@ body {
 }*/
 .resultsContainer{
     display: flex;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     justify-content: space-evenly;
     height: inherit;
