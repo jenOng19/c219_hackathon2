@@ -53,6 +53,7 @@ class Yelp {
                 alt: response["businesses"][biz]['name'] + " " + "photo",
                 width: 375,
                 height: 248.625,
+
             });
             var picLink = $("<a>").attr({href: response["businesses"][biz]['url']}).append(pic);
             var phone = $("<div>").text("Phone: " + response["businesses"][biz]['display_phone']);

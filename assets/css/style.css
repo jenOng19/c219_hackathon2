@@ -129,10 +129,9 @@ body {
     display: inline-block;
 }*/
 
-
 .carousel-item{
     height: 100vh;
-    background-color: #204d74;
+    /*background-color: #204d74;*/
 }
 
 /*.slide1,.slide2,.slide3{
@@ -141,7 +140,7 @@ body {
 }*/
 .resultsContainer{
     display: flex;
-    align-items: stretch;
+    align-items: center;
     flex-direction: row;
     justify-content: space-evenly;
     height: inherit;
