@@ -28,60 +28,51 @@ class StayHome {
         console.log("StayHome handleGetDataSuccess called");
         console.log(response);
 
-        var meal = response["meals"][0]["strMeal"];
-        var mealTwo = response["meals"][1]["strMeal"];
-        //var mealThree = response["meals"][2]["strMeal"];
-
-        var image = $("<img>").attr({
-            src: response["meals"][0]["strMealThumb"],
-            alt: response["meals"][0]["strMeal"],
-            width: 250,
-            height: 165.75,
+        this.infoTiles = [];
+        for (var dish = 0; dish <= 1; dish++) {
+            //pull all the desired response values for current biz and store in variables
+            //create dom elements using the response values
+            var results = $('<div>');
+            var meal = $('<h1>').text(response["meals"][dish]["strMeal"]).css({
+                display: "inline"
+            });
+            var cuisine = $('<h3>').text(response["meals"][dish]["strArea"]);
+            var category = $('<div>').text("Category :"+response["meals"][dish]["strCategory"]);
+            var tags = $('<div>').text("Other users tagged this recipe as: "+response["meals"][dish]["strTags"]);
+           /* var counter = 1;
+            response["meals"][0]["strIngredient"+counter]
+            response["meals"][0]["strMeasure"+counter]*/
+            var pic = $("<img>").attr({
+                src: response["meals"][dish]["strMealThumb"],
+                alt: response["meals"][dish]["strMeal"],
+                /*width: 375,*/
+                height: "125"
+            }).css({
+                float: "left",
+                position: "relative"
+            });
+            var vidLink = $("<a>").attr({href: response["meals"][dish]["strYoutube"]}).append(pic);
+            var instructions =$('<div>').text(response["meals"][0]["strInstructions"]).css({
+                width: "90%",
+                left: "1%",
+                position: "relative",
+                textAlign: "justify"
+            });
+            results.append(meal, vidLink, cuisine, instructions, tags, category);
+            this.infoTiles.push(results);
+        }
+        for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {
+            $('.result'+tile).append(this.infoTiles[tile]);
+        }
+        //empties the array of result tiles to prepare for next time the method is called to do work again
+        this.infoTiles.length = 0;
+        //.carousel hide: off, .input hide: on
+        $('#apiResponseCarousel').toggleClass('hide');
+        $('.input').css({
+            height: "15vh"
+            /*justifyContent: "flex-end",*/
         });
-        var imageTwo = $("<img>").attr({
-            src: response["meals"][1]["strMealThumb"],
-            alt: response["meals"][1]["strMeal"],
-            width: 250,
-            height: 165.75,
-        });
 
-       /* var imageThree = $("<img>").attr({
-            src: response["meals"][2]["strMealThumb"],
-            alt: response["meals"][2]["strMeal"],
-            width: 250,
-            height: 165.75,
-        });*/
-
-        var results = $('<div>').addClass("responseContainer").append(meal, image);
-        var resultsTwo = $('<div>').addClass("responseContainer").append(mealTwo, imageTwo);
-        //var resultsThree = $('<div>').addClass("responseContainer").append(mealThree, imageThree);
-        /*for(var recipe = 0; recipe < response["meals"].length; recipe++){
-                meal = $("<div>").text(response["meals"][recipe]["strMeal"]);
-                image = $("<img>").attr({
-                    src: response["meals"][recipe]["strMealThumb"],
-                    alt: response["meals"][recipe]["strMeal"],
-                    recipeNum: recipe,
-                    width: 250,
-                    height: 165.75,
-                });
-                //var image2 = image.on('click', this.grabIngredients);
-                results.append(meal);
-                console.log("meal added");
-
-        }*/
-        //results.addClass("responseContainer");
-
-        $('.modal').toggleClass('hide');
-        $('.slide1').append(results);
-        $('.slide2').append(resultsTwo);
-        //$('.slide3').append(resultsThree);
-
-
-
-        /*this.dinner = response;
-        console.log(this.dinner);
-        results.addClass("responseContainer");
-        $('.modal').append(results).toggleClass('hide');*/
         console.log(this.grabIngredients(response));
     }
 
