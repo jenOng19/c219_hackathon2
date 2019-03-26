@@ -11,7 +11,6 @@ class Beer{
     //===================================================================================================
 
     getBeerValue(value){
-        debugger;
         value = this.value;
         var ajaxConfig = {
             async: true,
@@ -27,7 +26,6 @@ class Beer{
         $.ajax(ajaxConfig);
     }
     handleGetDataSuccess(response){
-        debugger;
         for(var beerIndex = 0; beerIndex < response.data.length; beerIndex++){
             var lowercaseString = response.data[beerIndex].name.toLowerCase();
             if(lowercaseString.includes(this.value)){
