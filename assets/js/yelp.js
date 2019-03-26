@@ -38,6 +38,9 @@ class Yelp {
     handleGetDataSuccess(response) {
         console.log("response:", response);
         //from response, retrieve name, image/imageLink, phone, number of reviews, rating, location, price; append to carousel dom elements
+        for (var tile = 0; tile <= 5; tile++) {
+            $('.result'+tile).empty();
+        }
         this.infoTiles = [];
         for (var biz = 0; biz <= 5; biz++) {
             //pull all the desired response values for current biz and store in variables
@@ -68,7 +71,9 @@ class Yelp {
         //empties the array of result tiles to prepare for next time the method is called to do work again
         this.infoTiles.length = 0;
         //.carousel hide: off, .input hide: on
-        $('#apiResponseCarousel').toggleClass('hide');
+        if($('#apiResponseCarousel').find('.hide')) {
+            $('#apiResponseCarousel').removeClass('hide');
+        }
         $('.input').css({
             height: "15vh"
             /*justifyContent: "flex-end",*/
