@@ -55,8 +55,8 @@ class Yelp {
             var pic = $("<img>").attr({
                 src: response["businesses"][biz]['image_url'],
                 alt: response["businesses"][biz]['name'] + " " + "photo",
-                width: 500,
-                height: 500,
+                width: 700,
+                height: 700,
             }).css({
                 'border': '8px ridge #ADCCD8',
                 'border-radius': '14px',

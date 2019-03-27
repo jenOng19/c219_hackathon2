@@ -37,7 +37,7 @@ class StayHome {
             var results = $('<div>').css({
                 'textAlign': 'center',
                 'margin': '2%',
-                'height': '50%',
+                'height': '70%',
                 'border': '3px ridge #ADCCD8',
                 'border-radius': '14px'
             });
@@ -54,10 +54,11 @@ class StayHome {
                 src: response["meals"][dish]["strMealThumb"],
                 alt: response["meals"][dish]["strMeal"],
                 /*width: 375,*/
-                height: 500,
-                width: 500,
+                height: '50%',
+                width: '65%',
                 recipeNum: dish,
             }).css({
+                'float': "left",
                 'position': "relative",
                 'border': '8px ridge #ADCCD8',
                 'border-radius': '14px'
