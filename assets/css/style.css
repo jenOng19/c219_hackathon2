@@ -83,13 +83,15 @@ body {
     right: 36%;
 }
 
-.input{
-    height: 100vh;
-    background-color: lightslategray;
+.backgroundImg{
     background-image: url(http://www.2ruidosoredheads.com/Portals/_2ruidosoreadheads/images/default/Nightlife.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.input{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,8 +104,14 @@ body {
     border: 2px solid black;
     width: 30%;
     background: #f1f1f1;
-    height: 10vh
+    height: 5vh;
 }
+
+#foodSearchBar{
+    border-radius: 15px 0 0 15px;
+}
+
+
 #searchButton {
     width: 6%;
     padding: 10px;
@@ -112,7 +120,8 @@ body {
     font-size: 17px;
     border: 2px solid black;
     cursor: pointer;
-    height: 10vh;
+    height: 5vh;
+    border-radius: 0 15px 15px 0;
 }
 
 /*#foodContainer{
@@ -144,6 +153,7 @@ body {
     flex-direction: row;
     justify-content: space-evenly;
     height: inherit;
+    color: white;
 }
 #displayArea{
     height: 85%;
