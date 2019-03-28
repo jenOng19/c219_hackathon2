@@ -1,6 +1,7 @@
 $(document).ready( startApp );
 
 var search;
+var stayHome;
 
 //===================================================================================================
 // onload, SearchCategory is instantiated with DOM elements

@@ -11,7 +11,8 @@ class StayHome {
     }
 
     addEventHandlers(){
-        $('.recipeButton').click(this.handleRecipeAButton);
+        $('.recipeButton').click(this.handleRecipeAButton)
+        console.log("add Event Handlers was called");
     }
     //===============================================================================
     // Ajax call to get data from MealDB
@@ -57,7 +58,8 @@ class StayHome {
             var cuisine = $('<h3>').text(response["meals"][dish]["strArea"]);
             var category = $('<div>').text("Category :"+response["meals"][dish]["strCategory"]);
             var tags = $('<div>').text("Other users tagged this recipe as: "+response["meals"][dish]["strTags"]);
-            var button=$('<button>').addClass('.recipeButton').text('Recipe');
+            var button=$('<button>').addClass('recipeButton').text('Recipe');
+            
             
             /* var counter = 1;
             response["meals"][0]["strIngredient"+counter]
@@ -87,6 +89,8 @@ class StayHome {
 
             results.append(meal, vidLink, cuisine, instructions, category, button);
 
+            
+
             this.infoTiles.push(results);
         }
         for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {
@@ -104,6 +108,8 @@ class StayHome {
         });
         this.dinner = response;
         // console.log(this.grabIngredients(response));
+
+        this.addEventHandlers();
     }
 
     //===============================================================================
