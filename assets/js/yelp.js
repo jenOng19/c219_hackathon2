@@ -83,7 +83,6 @@ class Yelp {
         }
         $('.input').css({
             height: "15vh"
-            /*justifyContent: "flex-end",*/
         });
 
     }

@@ -154,6 +154,7 @@ body {
     justify-content: space-evenly;
     height: inherit;
     color: white;
+    height: 85vh;
 }
 #displayArea{
     height: 85%;
