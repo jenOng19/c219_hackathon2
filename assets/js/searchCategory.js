@@ -78,6 +78,7 @@ class SearchCategory{
             if(!drinkValue){
                 var homeFood = new StayHome(foodValue);
                 homeFood.getDataByName();
+            
             }else if(!foodValue){
                 var cocktails= new Cocktails(drinkValue);
                 var beer= new Beer(drinkValue);
