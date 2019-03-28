@@ -37,12 +37,14 @@ class StayHome {
             var results = $('<div>').css({
                 'textAlign': 'center',
                 'margin': '2%',
-                'height': '70%',
+                'height': '100%',
+                'width': '100%',
                 'border': '3px ridge #ADCCD8',
                 'border-radius': '14px'
             });
             var meal = $('<h1>').text(response["meals"][dish]["strMeal"]).css({
-                display: "inline"
+                'height': '80%',
+                'width': '30%,'
             });
             var cuisine = $('<h3>').text(response["meals"][dish]["strArea"]);
             var category = $('<div>').text("Category :"+response["meals"][dish]["strCategory"]);
@@ -58,19 +60,21 @@ class StayHome {
                 width: '65%',
                 recipeNum: dish,
             }).css({
-                'float': "left",
                 'position': "relative",
                 'border': '8px ridge #ADCCD8',
-                'border-radius': '14px'
+                'border-radius': '14px',
+                'z-index': '100',
+                'height':'80%',
+                'width':'80%'
             }).on('click', this.grabIngredients);
             var vidLink = $("<a>").attr({href: response["meals"][dish]["strYoutube"]}).append(pic);
-            var instructions =$('<div>').text(response["meals"][0]["strInstructions"]).css({
+            var instructions =$('<div>').css({
                 width: "90%",
                 left: "1%",
                 position: "relative",
                 textAlign: "justify"
             });
-            results.append(meal, vidLink, cuisine, instructions, category);
+            results.append(meal, pic, cuisine, instructions, category);
             this.infoTiles.push(results);
         }
         for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {
@@ -86,14 +90,15 @@ class StayHome {
             height: "15vh"
             /*justifyContent: "flex-end",*/
         });
-
-        console.log(this.grabIngredients(response));
+        this.dinner = response;
+        // console.log(this.grabIngredients(response));
     }
 
     //===============================================================================
     // callback to provide individual ingredients for selected food
     //===============================================================================
     grabIngredients(response){
+        debugger;
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
             var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
             var ingredientNames = [];
