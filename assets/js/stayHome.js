@@ -35,7 +35,7 @@ class StayHome {
     handleGetDataSuccess(response){
         console.log("StayHome handleGetDataSuccess called");
         console.log(response);
-        //var carouselHide = $('.slide2, .slide3, .carousel-indicators, .carousel-control-next, .carousel-control-prev')
+
         if(response["meals"] === null || response["meals"].length<= 1 ){
             $('#foodSearchBar').val(null).attr({
                 placeholder: "No results found...Please try another search!"
@@ -48,13 +48,6 @@ class StayHome {
         }
         this.infoTiles = [];
 
-       /* if(response["meals"].length === 2){
-            carouselHide.addClass('hide');
-        }else if(response["meals"].length === 3 || response["meals"].length === 4 ){
-            $('.slide3').detach();
-        }else{
-            console.log('You are almost there buddy!!!!');
-        }*/
         for (var dish = 0; dish < response["meals"].length; dish++) {
             //pull all the desired response values for current biz and store in variables
             //create dom elements using the response values
