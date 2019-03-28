@@ -25,14 +25,18 @@ class Beer{
         };
         $.ajax(ajaxConfig);
     }
-    handleGetDataSuccess(response){
-        for(var beerIndex = 0; beerIndex < response.data.length; beerIndex++){
-            var lowercaseString = response.data[beerIndex].name.toLowerCase();
-            if(lowercaseString.includes(this.value)){
-                console.log('beer found!', lowercaseString);
-                this.render(lowercaseString);
+    handleGetDataSuccess(response) {
+        if (!response.data) {
+            return;
+        } else {
+            for (var beerIndex = 0; beerIndex < response.data.length; beerIndex++) {
+                var lowercaseString = response.data[beerIndex].name.toLowerCase();
+                if (lowercaseString.includes(this.value)) {
+                    console.log('beer found!', lowercaseString);
+                    this.render(lowercaseString);
+                }
             }
-        }        
+        }
     }
     render(){
         console.log('WIP');

@@ -49,7 +49,6 @@ class Cocktails{
         console.log(this.cocktail);
         results.addClass("responseContainer");
         $('.modal').append(results).toggleClass('hide');
-        console.log(this.grabIngredients(response));
     }
 
     grabIngredients(response){
