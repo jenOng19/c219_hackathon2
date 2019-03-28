@@ -6,7 +6,8 @@
     <!-- Title for bookmark bar -->
     <title>Dinner Planner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">    
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/stayHome.js"></script>
@@ -31,9 +32,9 @@
     <!-- main page: cook at home or go out to eat -->
 
     <div class="main">
-        <!-- <div class="title">
+        <div class="title">
             Dinner Planner
-        </div> -->
+        </div>
         <div class="recipes">
             <!-- <div class="recipeTitle">Recipes</div> -->
             <button id="recipeButton" type="button">Let's Cook!</button>
@@ -48,7 +49,7 @@
 
     <div class="input hide">
         <input id="foodSearchBar" type="text" placeholder="Search for food.." name="search"/>
-        <input id="drinkSearchBar" type="text" placeholder="Search for drinks.." name="search"/>
+        <input id="drinkSearchBar" class="drinkHidden" type="text" placeholder="Search for drinks.." name="search"/>
         <button id="searchButton" type="submit"><i class="fa fa-search"></i></button>
     </div>
 
