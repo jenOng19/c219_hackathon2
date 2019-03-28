@@ -7,18 +7,17 @@ class StayHome {
         this.getDataByName=this.getDataByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
         this.grabIngredients = this.grabIngredients.bind(this);
-        this.handleRecipeAButton=this.handleRecipeAButton.bind(this);
+        this.handleRecipeButton=this.handleRecipeButton.bind(this);
     }
 
     addEventHandlers(){
-        $('.recipeButton').click(this.handleRecipeAButton)
-        console.log("add Event Handlers was called");
+        $('.recipeButton').click(this.handleRecipeButton)
     }
     //===============================================================================
     // Ajax call to get data from MealDB
     //===============================================================================
 
-    handleRecipeAButton(){
+    handleRecipeButton(){
         $('.modalContainer').toggleClass('hide');
     }
     getDataByName(value){
@@ -145,6 +144,7 @@ class StayHome {
                 totalIngredients.push(singleIngredient);
                 this.ingredients = totalIngredients;
             }
+            
             console.log(this.ingredients);
             console.log("total ingredients for our recipe ", totalIngredients);
 
