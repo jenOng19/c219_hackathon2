@@ -13,7 +13,7 @@ function startApp(){
         foodInput: $('#foodSearchBar'),
         drinkInput: $('#drinkSearchBar'),
         searchButton: $('#searchButton'),
+        closeButton: $('.button')
     });
     search.addEventHandlers();
 }
-

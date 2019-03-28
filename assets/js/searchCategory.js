@@ -10,6 +10,7 @@ class SearchCategory{
         this.handleSearch=this.handleSearch.bind(this);
         this.handleSearchMode=this.handleSearchMode.bind(this);
         this.handleYelpButton=this.handleYelpButton.bind(this);
+        this.showHideModal=this.showHideModal.bind(this);
     }
 
     addEventHandlers(){
@@ -20,10 +21,16 @@ class SearchCategory{
         $('#foodSearchBar').click(this.handleFoodSearchBar);
         $('#drinkSearchBar').click(this.handleDrinkSearchBar);
         $('#searchButton').click(this.handleSearch);
+        $('.closing-button').click(this.showHideModal);
+    }
+
+    showHideModal(){
+        $('#displayArea').addClass('hide');
+        $(".input").css('height','')
     }
 
     handleYelpButton(){
-        $('.drinkHidden').toggleClass('hide');
+        $('.drinkHidden').addClass('hide');
     }
     //=============================================================================================================
     // When either "Eat Out" or "Cook" button are clicked, the main page will hide and the search page will appear
