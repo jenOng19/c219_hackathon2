@@ -7,11 +7,19 @@ class StayHome {
         this.getDataByName=this.getDataByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
         this.grabIngredients = this.grabIngredients.bind(this);
+        this.handleRecipeAButton=this.handleRecipeAButton.bind(this);
+    }
+
+    addEventHandlers(){
+        $('.recipeButton').click(this.handleRecipeAButton);
     }
     //===============================================================================
     // Ajax call to get data from MealDB
     //===============================================================================
 
+    handleRecipeAButton(){
+        $('.modalContainer').toggleClass('hide');
+    }
     getDataByName(value){
         value = this.value;
         var ajaxConfig = {
@@ -49,6 +57,8 @@ class StayHome {
             var cuisine = $('<h3>').text(response["meals"][dish]["strArea"]);
             var category = $('<div>').text("Category :"+response["meals"][dish]["strCategory"]);
             var tags = $('<div>').text("Other users tagged this recipe as: "+response["meals"][dish]["strTags"]);
+            var button=$('<button>').addClass('.recipeButton').text('Recipe');
+            
             /* var counter = 1;
             response["meals"][0]["strIngredient"+counter]
             response["meals"][0]["strMeasure"+counter]*/
@@ -74,7 +84,9 @@ class StayHome {
                 position: "relative",
                 textAlign: "justify"
             });
-            results.append(meal, pic, cuisine, instructions, category);
+
+            results.append(meal, vidLink, cuisine, instructions, category, button);
+
             this.infoTiles.push(results);
         }
         for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {

@@ -164,8 +164,8 @@ body {
 #displayArea{
     height: 85%;
 }
-/* 
-#close{
+
+.closing-button{
     position:absolute;
     top:3px;
     right:20px;
@@ -179,7 +179,24 @@ body {
     color: slategray;
     vertical-align: middle;
     z-index: 4;
-} */
+}
+
+.modalContainer{
+    height:100%;
+    width:100%;
+    word-wrap: break-word;
+    font-size:1rem;
+    color: #ccedda;
+    overflow-x:hidden;
+    overflow-y:auto;
+    background-color: green;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: justify;
+    z-index: 1;
+}
 
 
 /* selectionPage */
