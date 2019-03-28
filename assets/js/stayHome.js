@@ -34,25 +34,35 @@ class StayHome {
         for (var dish = 0; dish <= 1; dish++) {
             //pull all the desired response values for current biz and store in variables
             //create dom elements using the response values
-            var results = $('<div>');
+            var results = $('<div>').css({
+                'textAlign': 'center',
+                'margin': '2%',
+                'height': '70%',
+                'border': '3px ridge #ADCCD8',
+                'border-radius': '14px'
+            });
             var meal = $('<h1>').text(response["meals"][dish]["strMeal"]).css({
                 display: "inline"
             });
             var cuisine = $('<h3>').text(response["meals"][dish]["strArea"]);
             var category = $('<div>').text("Category :"+response["meals"][dish]["strCategory"]);
             var tags = $('<div>').text("Other users tagged this recipe as: "+response["meals"][dish]["strTags"]);
-           /* var counter = 1;
+            /* var counter = 1;
             response["meals"][0]["strIngredient"+counter]
             response["meals"][0]["strMeasure"+counter]*/
             var pic = $("<img>").attr({
                 src: response["meals"][dish]["strMealThumb"],
                 alt: response["meals"][dish]["strMeal"],
                 /*width: 375,*/
-                height: "125"
+                height: '50%',
+                width: '65%',
+                recipeNum: dish,
             }).css({
-                float: "left",
-                position: "relative"
-            });
+                'float': "left",
+                'position': "relative",
+                'border': '8px ridge #ADCCD8',
+                'border-radius': '14px'
+            }).on('click', this.grabIngredients);
             var vidLink = $("<a>").attr({href: response["meals"][dish]["strYoutube"]}).append(pic);
             var instructions =$('<div>').text(response["meals"][0]["strInstructions"]).css({
                 width: "90%",
@@ -60,7 +70,7 @@ class StayHome {
                 position: "relative",
                 textAlign: "justify"
             });
-            results.append(meal, vidLink, cuisine, instructions, tags, category);
+            results.append(meal, vidLink, cuisine, instructions, category);
             this.infoTiles.push(results);
         }
         for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {

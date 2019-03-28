@@ -43,13 +43,20 @@ class Yelp {
             //pull all the desired response values for current biz and store in variables
             //create dom elements using the response values
 
-            var results = $('<div>');
+            var results = $('<div>').css({
+                'border': '3px ridge #ADCCD8',
+                'border-radius': '14px',
+                'text-align': 'center'
+            });
             var name = $("<div>").text(response["businesses"][biz]["name"]);
             var pic = $("<img>").attr({
                 src: response["businesses"][biz]['image_url'],
                 alt: response["businesses"][biz]['name'] + " " + "photo",
-                width: 375,
-                height: 248.625,
+                width: 700,
+                height: 700,
+            }).css({
+                'border': '8px ridge #ADCCD8',
+                'border-radius': '14px',
             });
             var picLink = $("<a>").attr({href: response["businesses"][biz]['url']}).append(pic);
             var phone = $("<div>").text("Phone: " + response["businesses"][biz]['display_phone']);
