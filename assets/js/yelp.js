@@ -63,12 +63,12 @@ class Yelp {
             this.infoTiles.push(results);
         }
         for (var tile = 0; tile <= this.infoTiles.length-1; tile++) {
-            $('.result'+tile).append(this.infoTiles[tile]);
+            $('.result'+tile).empty().append(this.infoTiles[tile]);
         }
         //empties the array of result tiles to prepare for next time the method is called to do work again
         this.infoTiles.length = 0;
         //.carousel hide: off, .input hide: on
-        $('#apiResponseCarousel').toggleClass('hide');
+        $('#apiResponseCarousel').removeClass('hide');
         $('.input').css({
             height: "15vh"
             /*justifyContent: "flex-end",*/
