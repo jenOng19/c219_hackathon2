@@ -44,19 +44,26 @@ class Yelp {
             //create dom elements using the response values
 
             var results = $('<div>').css({
+                'textAlign': 'center',
+                'margin': '2%',
+                'height': '65vh',
+                'width': '30vw',
                 'border': '3px ridge #ADCCD8',
-                'border-radius': '14px',
-                'text-align': 'center'
+                'border-radius': '14px'
             });
             var name = $("<div>").text(response["businesses"][biz]["name"]);
             var pic = $("<img>").attr({
                 src: response["businesses"][biz]['image_url'],
                 alt: response["businesses"][biz]['name'] + " " + "photo",
-                width: 700,
-                height: 700,
+                'height': '50%',
+                'width': '65%,'
             }).css({
+                'position': "relative",
                 'border': '8px ridge #ADCCD8',
                 'border-radius': '14px',
+                'z-index': '100',
+                'height':'80%',
+                'width':'80%'
             });
             var picLink = $("<a>").attr({href: response["businesses"][biz]['url']}).append(pic);
             var phone = $("<div>").text("Phone: " + response["businesses"][biz]['display_phone']);
@@ -65,7 +72,9 @@ class Yelp {
             var address = $("<div>").text(response["businesses"][biz]['location']['display_address']);
             var price = $("<div>").text("Pricing: " + response["businesses"][biz]['price']);
 
-            results.append(name, picLink, phone, review, rating, price);
+            results.append(name, picLink, phone, review, rating, price).css({
+                'font-size': '1.5em'
+            });
             //append to respective results container
             this.infoTiles.push(results);
         }
