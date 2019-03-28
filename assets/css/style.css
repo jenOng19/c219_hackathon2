@@ -45,7 +45,8 @@ body {
     position:relative;
     background-repeat: no-repeat;
     background-image: url("../css/eatInImg.jpg");
-    /* background-size: 100%; */
+    background-position-x: 0%;
+    background-size: cover;
 }
 
 .yelp{
@@ -57,7 +58,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
-    background-position-x: center;
+    background-position-x: 100%;
 }
 
 #recipeButton{
@@ -70,6 +71,7 @@ body {
     cursor: pointer;
     top: 71%;
     position: relative;
+    background-size: cover;
     right: -41%;
 }
 
