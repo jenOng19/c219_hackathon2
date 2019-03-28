@@ -4,23 +4,26 @@ class StayHome {
         this.food = {};
         this.dinner = {};
         this.ingredients = {};
+        this.meal= {
+            name: '',
+            img: '',
+            description: ''
+        }
+
         this.getDataByName=this.getDataByName.bind(this);
         this.handleGetDataSuccess = this.handleGetDataSuccess.bind(this);
         this.grabIngredients = this.grabIngredients.bind(this);
-        this.handleRecipeAButton=this.handleRecipeAButton.bind(this);
+        // this.handleRecipeButton=this.handleRecipeButton.bind(this);
+        this.renderIngredients = this.renderIngredients.bind(this);
     }
 
     addEventHandlers(){
-        $('.recipeButton').click(this.handleRecipeAButton)
         console.log("add Event Handlers was called");
     }
     //===============================================================================
     // Ajax call to get data from MealDB
     //===============================================================================
 
-    handleRecipeAButton(){
-        $('.modalContainer').toggleClass('hide');
-    }
     getDataByName(value){
         value = this.value;
         var ajaxConfig = {
@@ -79,7 +82,7 @@ class StayHome {
                 'height':'80%',
                 'width':'80%'
             }).on('click', this.grabIngredients);
-            var vidLink = $("<a>").attr({href: response["meals"][dish]["strYoutube"]}).append(pic);
+            // var vidLink = $("<a>").attr({href: response["meals"][dish]["strYoutube"]}).append(pic);
             var instructions =$('<div>').css({
                 width: "90%",
                 left: "1%",
@@ -87,7 +90,7 @@ class StayHome {
                 textAlign: "justify"
             });
 
-            results.append(meal, vidLink, cuisine, instructions, category, button);
+            results.append(meal, pic, cuisine, instructions, category, button);
 
             
 
@@ -108,17 +111,18 @@ class StayHome {
         });
         this.dinner = response;
         // console.log(this.grabIngredients(response));
-
-        this.addEventHandlers();
     }
 
     //===============================================================================
     // callback to provide individual ingredients for selected food
     //===============================================================================
     grabIngredients(response){
-        debugger;
+        // debugger;
         var clickedrecipeNum = $(event.currentTarget).attr('recipeNum');
             var dinner = this.dinner.meals[parseInt(clickedrecipeNum)];
+            this.meal.img = dinner.strMealThumb;
+            this.meal.description = dinner.strInstructions;
+            this.meal.name = dinner.strMeal;
             var ingredientNames = [];
             var measurementValues = [];
             for (var recipeKey in dinner) {
@@ -144,19 +148,39 @@ class StayHome {
                 singleIngredient.measurement = measurementValues[i];
                 totalIngredients.push(singleIngredient);
                 this.ingredients = totalIngredients;
+                console.log(this.ingredients);
             }
-            console.log(this.ingredients);
-            console.log("total ingredients for our recipe ", totalIngredients);
-
-        
+            this.renderIngredients();
     }
 //===============================================================================
 // render to dom
 //===============================================================================
 
-    renderTotalIngredients(totalIngredients){
-        var ingredients = this.ingredients;
-        console.log(this.ingredients);
-    }
+    renderIngredients(response){
+        debugger;
+        $('.modalContainer').toggleClass('hide');
+        var foodName = $('<div>').text(this.meal.name).addClass('foodNameContainer');
+        var image = $('<div>',{
+            'css':{
+                'background-image': 'url('+this.meal.img+')',
+                'background-size': 'cover',
+                'border': '8px ridge #ADCCD8',
+                'border-radius': '14px',
+                'height':'100%',
+                'width':'100%',
+            }
+        })
+        var foodDescription = $('<div>').text(this.meal.description);
+        $('.modalHeader').append(foodName);
+        $('.bodyImg').append(image);
+        for(var index = 0; index < this.ingredients.length; index++){
+            var nestedValue = this.ingredients[index].name;
+            var nestedMeasurement = this.ingredients[index].measurement;
 
-}
+            var measurement = $('<div>').append(nestedValue, ': ', nestedMeasurement).addClass('measurementContainer');
+            $('.recipeStuff').append(measurement);
+            $('.recipeDescription').append(foodDescription);
+        }
+
+        }
+    }
