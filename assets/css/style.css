@@ -250,9 +250,62 @@ body {
     display: inline-block;
 } */
 
+.modalContainer{
+    border: 8px ridge #ADCCD8;
+    border-radius: '14px';
+}
+
 .hide{
     display: none;
 }
 
+.measurementContainer{
+    font-size: 1.5rem;
+};
 
+.modalImg{
+    position: relative;
+    border: 8px ridge #ADCCD8;
+    border-radius: 14px;
+    height:80%;
+    width:80%;
+}
 
+.foodNameContainer{
+    display: inline-block;
+    font-size: 3rem;
+    text-align: top;
+}
+.modalHeader{
+    height: 10%;
+    font-size: 3rem;
+    text-align: center;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.bodyImg{
+    height: 85%;
+    width: 40%;
+    display:inline-block;
+    position: relative;
+    left: 5%;
+}
+
+.recipeStuff{
+    height: 85%;
+    width: 15%;
+    display: inline-block;
+    position: relative;
+    left: 5%;
+    top: 10%;
+    vertical-align: top;
+    text-align: center;
+}
+.recipeDescription{
+    height: 85%;
+    width: 35%;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    left: 8%;
+    font-size: 1.5rem;
+}
