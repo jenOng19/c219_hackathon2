@@ -35,23 +35,13 @@ class StayHome {
     handleGetDataSuccess(response){
         console.log("StayHome handleGetDataSuccess called");
         console.log(response);
-
-        if(response["meals"] === null || response["meals"].length<= 1 ){
-            $('#foodSearchBar').val(null).attr({
-                placeholder: "No results found...Please try another search!"
-            });
-            return;
-        }
-
         for (var tile = 0; tile <= 5; tile++) {
             $('.result'+tile).empty();
         }
         this.infoTiles = [];
-
-        for (var dish = 0; dish < response["meals"].length; dish++) {
+        for (var dish = 0; dish <= 1; dish++) {
             //pull all the desired response values for current biz and store in variables
             //create dom elements using the response values
-
             var results = $('<div>').css({
                 'textAlign': 'center',
                 'margin': '2%',
